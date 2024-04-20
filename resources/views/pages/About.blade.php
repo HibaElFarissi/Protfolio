@@ -81,44 +81,45 @@
         </section>
         <!-- breadcrumb area  end -->
 
-       <!-- breadcrumb area  end -->
-    <section class="bd-team-details__area section-space">
-        <div class="container">
-            <div class="team__details-wrapper">
-                <div class="row g-5 align-items-center">
-                    {{-- @foreach ($teams as $item ) --}}
-                    <div class="col-xl-4 col-lg-4 col-md-5">
-                        <div class="team__details-thumb bg-solid">
-                            {{-- <img src="{{ asset('storage/' . $item->photo) }}" alt="image not found"> --}}
-                        </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-8 col-md-7">
-                        <div class="team__details-content">
-                            <div class="team__details-author">
-                                {{-- <h3 class="team__details-title">{{$item->name}}</h3> --}}
-                                {{-- <span class="team__details-designation">{{$item->work}}</span> --}}
-                            </div>
-                            {{-- <p>{{$item->About_Me}}</p> --}}
-                            <!-- social -->
-                            <div class="theme__social">
-                                {{-- <a href="{{$item->Facebook}}"><i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                                <a href="{{$item->Twitter}}"><i class="icon-twiter"></i>
-                                </a>
-                                <a href="{{$item->Linkedin}}"><i class="fa-brands fa-linkedin"></i>
-                                </a>
-                                <a href="{{$item->Github}}"><i class="fa-brands fa-github"></i>
-                                </a> --}}
+             <!-- team area start -->
+        <section class="bd-team-details__area section-space">
+            <div class="container">
+                <div class="team__details-wrapper">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-xl-4 col-lg-4 col-md-5">
+                            <div class="team__details-thumb bg-solid">
+                                <img src="assets/imgs/aboutMe.jpeg" alt="image not found">
                             </div>
                         </div>
+                        <div class="col-xl-8 col-lg-8 col-md-7">
+                            <div class="team__details-content">
+                                <div class="team__details-author">
+                                    <h3 class="team__details-title">Hiba El Farissi</h3>
+                                    <span class="team__details-designation">Full Stack Developper</span>
+                                </div>
+                                <p>Meet Hiba, a dynamic full-stack developer known for her passion for crafting exceptional digital experiences.
+                                    With expertise in both frontend and backend development, she brings a unique blend of creativity to every project she undertakes.
+                                    When not coding,
+                                    Hiba enjoys exploring new technologies.
+                                </p>
+                                <!-- social -->
+                                <div class="theme__social">
+                                    <a href="https://web.facebook.com/liya.hiba.5/"><i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/lea_heba/"><i class="icon-instagram"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/hiba-el-farissi-8161b5279/"><i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                    <a href="https://github.com/HibaElFarissi"><i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    {{-- @endforeach --}}
-
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- about text area start -->
+        </section>
+        <!-- team area end -->
 
      <!-- feature list area -->
      <section class="bd-feature__list section-space">

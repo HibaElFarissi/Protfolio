@@ -1,5 +1,6 @@
 
 @extends('layouts.navbar')
+{{-- @include('sweetalert::alert') --}}
 
 @section('content')
         <!-- Banner area start -->
@@ -47,22 +48,22 @@
                                             <img src="assets/imgs/hiba.png" alt="image not found">
                                         </div>
                                         <div class="theme__social banner-social">
-                                            <a href="#"><i class="fa-brands fa-facebook-f"></i>
+                                            <a href="https://web.facebook.com/liya.hiba.5/"><i class="fa-brands fa-facebook-f"></i>
                                                 <div class="banner__social-tooltip">
                                                     <p>Facebook</p>
                                                 </div>
                                             </a>
-                                            <a href="#"><i class="fa-brands fa-github"></i>
+                                            <a href="https://github.com/HibaElFarissi"><i class="fa-brands fa-github"></i>
                                                 <div class="banner__social-tooltip">
                                                     <p>Github</p>
                                                 </div>
                                             </a>
-                                            <a href="#"><i class="fa-brands fa-linkedin"></i>
+                                            <a href="https://www.linkedin.com/in/hiba-el-farissi-8161b5279/"><i class="fa-brands fa-linkedin"></i>
                                                 <div class="banner__social-tooltip">
                                                     <p>Linkedin</p>
                                                 </div>
                                             </a>
-                                            <a href="#"><i class="fa-brands fa-instagram"></i>
+                                            <a href="https://www.instagram.com/lea_heba/"><i class="fa-brands fa-instagram"></i>
                                                 <div class="banner__social-tooltip">
                                                     <p>Instagram</p>
                                                 </div>
@@ -1098,15 +1099,25 @@
                             </div>
                         </div>
                     </div>
+                    {{-- Form --}}
                     <div class="col-lg-7 wow fadeInRight" data-wow-delay=".3s">
                         <div class="row g-5 align-items-center justify-content-center">
+                            @if(session()->has('message'))
+                                <div class="alert alert-success">
+                                    {{ session()->get('message') }}
+                                </div>
+                              @endif
+
                             <div class="col-lg-6 text-center">
+                                <form action="{{ route('contact.store') }}" class="contact100-form validate-form" method="post">
+                                    @csrf
                                 <div class="from__input-box">
                                     <div class="contentHidden">
                                         <label for="text">Your Name<span>*</span></label>
                                     </div>
                                     <div class="form__input style-three">
-                                        <input name="fname" id="fname" type="text" placeholder="Your Name">
+                                        {{-- <input name="fname" id="fname" type="text" placeholder="Your Name"> --}}
+                                        <input type="text" name="name"  type="text" class="form-control" name="name"  placeholder="Your Name" data-validate = "Name is required">
                                         <div class="contentHidden"><span><i class="fa-solid fa-house"></i></span></div>
                                     </div>
                                 </div>
@@ -1117,7 +1128,11 @@
                                         <label for="text">Company Name<span>*</span></label>
                                     </div>
                                     <div class="form__input style-three">
-                                        <input name="lname" id="lname" type="text" placeholder="Company Name">
+                                        {{-- <input name="lname" id="lname" type="text" placeholder="Company Name"> --}}
+                                        <input type="text" name="company"  type="text" class="form-control" name="name"  placeholder="Company Name" data-validate = "Company name is required">
+                                            @error('message')
+                                                <span class="text-danger"> {{ $message }} </span>
+                                            @enderror
                                         <div class="contentHidden"><span><i class="fa-solid fa-house"></i></span></div>
                                     </div>
                                 </div>
@@ -1128,7 +1143,10 @@
                                         <label for="text">Email Adress<span>*</span></label>
                                     </div>
                                     <div class="form__input style-three">
-                                        <input name="email" id="text" type="email" placeholder="Email Adress">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                        @error('name')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
                                         <div class="contentHidden"><span><i class="fa-solid fa-house"></i></span></div>
                                     </div>
                                 </div>
@@ -1139,7 +1157,10 @@
                                         <label for="text">contentHidden<span>*</span></label>
                                     </div>
                                     <div class="form__input style-three">
-                                        <input name="name" id="name" type="text" placeholder="Phone Number">
+                                        <input name="phone" id="phone" type="text" placeholder="Phone Number">
+                                            @error('message')
+                                                 <span class="text-danger"> {{ $message }} </span>
+                                            @enderror
                                         <div class="contentHidden"><span><i class="fa-solid fa-house"></i></span></div>
                                     </div>
                                 </div>
@@ -1148,19 +1169,24 @@
                             <div class="col-lg-12 text-center">
 
                                 <div class="from__input-box">
-                                    <div class="contentHidden">
+                                    {{-- <div class="contentHidden">
                                         <label for="name">name<span>*</span></label>
-                                    </div>
+                                    </div> --}}
+
                                     <div class="form__input style-three">
-                                        <textarea name="name" placeholder="A Few Words"></textarea>
+                                        <textarea class="form-control" name="message" rows="5" placeholder="A Few Words"  data-validate = "Message is required"></textarea>
+                                            @error('message')
+                                                <span class="text-danger"> {{ $message }} </span>
+                                            @enderror
                                         <div class="contentHidden"><span><i class="fa-solid fa-envelope"></i></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="contact__btn">
-                                <a class="bd-btn w-100" href="contact.html">Submit now</a>
+                                <button class="bd-btn w-100" type="submit">Send Message</button>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>

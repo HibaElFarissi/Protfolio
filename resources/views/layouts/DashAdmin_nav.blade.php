@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('dash/css/quill.snow.css') }}">
     <link rel="stylesheet" href="{{ asset('dash/css/style.css') }}">
 
-    <link href="{{ asset('images/logob.svg') }}" rel="icon">
+    <link href="{{ asset('assets/imgs/icon.png') }}" rel="icon">
 
     <title>Protfolio - Dashboard_Admin</title>
 </head>
@@ -28,11 +28,15 @@
     <div class="preloader" id="preloader">
         <div class="preloader">
             <div class="waviy position-relative">
-                <span class="d-inline-block">H</span>
+                <span class="d-inline-block">P</span>
+                <span class="d-inline-block">R</span>
+                <span class="d-inline-block">O</span>
+                <span class="d-inline-block">T</span>
+                <span class="d-inline-block">F</span>
+                <span class="d-inline-block">O</span>
+                <span class="d-inline-block">L</span>
                 <span class="d-inline-block">I</span>
-                <span class="d-inline-block">B</span>
-                <span class="d-inline-block">A</span>
-
+                <span class="d-inline-block">O</span>
             </div>
         </div>
     </div>
@@ -57,26 +61,57 @@
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
                         <i data-feather="grid" class="menu-icon tf-icons"></i>
                         <span class="title">Dashboard</span>
-                        <span class="count">7</span>
+                        {{-- <span class="count">7</span> --}}
                     </a>
                 </li>
 
-                {{-- <li class="menu-title small text-uppercase">
-                    <span class="menu-title-text">APPS</span>
+                <li class="menu-title small text-uppercase">
+                    <span class="menu-title-text">LOGO</span>
                 </li>
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                        <i data-feather="folder-minus" class="menu-icon tf-icons"></i>
-                        <span class="title">File Manager</span>
+                        <i data-feather="feather" class="menu-icon tf-icons"></i>
+                        <span class="title">Logo</span>
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item">
-                            <a href="file-manager.html" class="menu-link">
-                                My Drive
+                            <a href="{{ route('logo.index') }}" class="menu-link">
+                                Show logo
+                            </a>
+                        </li>
+
+                        <li class="menu-item">
+                            <a href="{{ route('logo.create') }}" class="menu-link">
+                                Create logo
                             </a>
                         </li>
                     </ul>
-                </li> --}}
+                </li>
+
+                 <!-- Informations -->
+                 <li class="menu-title small text-uppercase">
+                    <span class="menu-title-text">All Information</span>
+                </li>
+                <li class="menu-item">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle active">
+
+                        <i data-feather="at-sign" class="menu-icon tf-icons"></i>
+                        <span class="title">Infos</span>
+                    </a>
+                    <ul class="menu-sub">
+                        <li class="menu-item">
+                            <a href="#" class="menu-link">
+                                All infos
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link">
+                                Create an info
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
 
 
 
@@ -85,103 +120,68 @@
                 </li>
 
 
+                 {{-- Email --}}
+                 <li class="menu-item">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                    <i data-feather="mail" class="menu-icon tf-icons"></i>
+                    <span class="title">Email</span>
+                </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('inbox') }}" class="menu-link">
+                    Inbox
+                    </a>
+                </li>
+            </ul>
+
+
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
                         <i data-feather="shopping-cart" class="menu-icon tf-icons"></i>
-                        <span class="title">eCommerce</span>
+                        <span class="title">Home</span>
                     </a>
                     <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Products
-                            </a>
-                        </li>
 
                         <li class="menu-item">
                             <a href="#" class="menu-link">
-                                Create Product
+                            Orders List
                             </a>
                         </li>
-                        {{-- Categories --}}
+                        
                         <li class="menu-item">
                             <a href="#" class="menu-link">
-                                Categories
+                            Orders List
                             </a>
                         </li>
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Create Category
-                            </a>
-                        </li>
-                     <li class="menu-item">
-                        <a href="#" class="menu-link">
-                        Orders List
+
+                    </ul>
+                </li>
+
+                  {{-- Banner --}}
+                  <li class="menu-item">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                    <i data-feather="message-square" class="menu-icon tf-icons"></i>
+                    <span class="title">Banners</span>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('Banner.index') }}" class="menu-link">
+                            Banner Show
                         </a>
                     </li>
-
-                    </ul>
-                </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                        <i data-feather="layers" class="menu-icon tf-icons"></i>
-                        <span class="title">Pages</span>
-                    </a>
-                    <ul class="menu-sub">
-                        {{-- About:  --}}
-
-                        <li class="menu-item">
-                                <a href="#" class="menu-link">
-                                    About Content
-                                </a>
-                        </li>
-
-                        {{-- Faq:  --}}
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                FAQ
-                            </a>
-                        </li>
-
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Create FAQ
-                            </a>
-                        </li>
-
-
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Quotes
-                            </a>
-                        </li>
-
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Create Quote
-                            </a>
-                        </li>
-
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Feedback
-                            </a>
-                        </li>
-
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                                Create Feedback
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
+                    <li class="menu-item">
+                        <a href="{{ route('banners.create') }}" class="menu-link">
+                        Create
+                        </a>
+                    </li>
+                </ul>
 
 
                 {{-- Blog --}}
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
 
-                    <i data-feather="align-justify" class="menu-icon tf-icons"></i>
+                    <i data-feather="align-left" class="menu-icon tf-icons"></i>
                     <span class="title">Blog</span>
                 </a>
                 <ul class="menu-sub">
@@ -198,73 +198,87 @@
                     </li>
                 </ul>
 
-                {{-- Email --}}
+
+                {{-- Education --}}
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                    <i data-feather="mail" class="menu-icon tf-icons"></i>
-                    <span class="title">Email</span>
+
+                    <i data-feather="book" class="menu-icon tf-icons"></i>
+                    <span class="title">Education</span>
                 </a>
-            <ul class="menu-sub">
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                        All Education
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                        Create An Education
+                        </a>
+                    </li>
+                </ul>
+
+
+
+                {{-- Experience --}}
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
-                    Inbox
-                    </a>
-                </li>
-            </ul>
+                    <a href="javascript:void(0);" class="menu-link menu-toggle active">
+
+                    <i data-feather="award" class="menu-icon tf-icons"></i>
+                    <span class="title">Experience</span>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                        All Experiences
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">
+                        Create An Experience
+                        </a>
+                    </li>
+                </ul>
 
 
 
 
-                {{-- Slide Home --}}
+
+
+                {{-- Testimonial --}}
                 <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle active">
 
-                    <i data-feather="align-right" class="menu-icon tf-icons"></i>
-                    <span class="title">Slide Home</span>
+                    <i data-feather="star" class="menu-icon tf-icons"></i>
+                    <span class="title">Testimonial</span>
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
-                            SlideShow
+                        <a href="{{ route('feedback.index') }}" class="menu-link">
+                            feedback
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
-                        Create
-                        </a>
-                    </li>
-                </ul>
-
-                {{-- Banner --}}
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                    <i data-feather="message-square" class="menu-icon tf-icons"></i>
-                    <span class="title">Banners</span>
-                </a>
-                <ul class="menu-sub">
-                    <li class="menu-item">
-                        <a href="#" class="menu-link">
-                            Banner Show
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link">
-                        Create
+                        <a href="{{ route('feedback.create') }}" class="menu-link">
+                        Create feedback
                         </a>
                     </li>
                 </ul>
 
 
-                {{-- Brands --}}
+                {{-- Skills --}}
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                    <i data-feather="message-square" class="menu-icon tf-icons"></i>
-                    <span class="title">Brands</span>
+                    <i data-feather="cpu" class="menu-icon tf-icons"></i>
+                    <span class="title">Skills</span>
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="#" class="menu-link">
-                        All Brands
+                        All skills
                     </a>
                 </li>
                 <li class="menu-item">
@@ -275,11 +289,27 @@
             </ul>
 
 
+                {{-- Categories --}}
+                <li class="menu-item">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle active">
+
+                    <i data-feather="list" class="menu-icon tf-icons"></i>
+                    <span class="title">Categories</span>
+                </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="#" class="menu-link">
+                        All Categories
+                    </a>
+                </li>
+            </ul>
+
+
                 {{-- Tags --}}
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
 
-                    <i data-feather="anchor" class="menu-icon tf-icons"></i>
+                    <i data-feather="tag" class="menu-icon tf-icons"></i>
                     <span class="title">Tags</span>
                 </a>
             <ul class="menu-sub">
@@ -291,17 +321,17 @@
             </ul>
 
 
-                {{-- Colors --}}
+                {{-- Services --}}
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
 
                     <i data-feather="aperture" class="menu-icon tf-icons"></i>
-                    <span class="title">Colors</span>
+                    <span class="title">Services</span>
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="#" class="menu-link">
-                        All Colors
+                        All Services
                     </a>
                 </li>
                 <li class="menu-item">
@@ -312,17 +342,19 @@
             </ul>
 
 
-                {{-- Sizes --}}
+
+                {{-- Projects --}}
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
 
-                    <i data-feather="activity" class="menu-icon tf-icons"></i>
-                    <span class="title">Sizes</span>
+                    {{-- <i data-feather="aperture" class="menu-icon tf-icons"></i> --}}
+                    <i data-feather="layers" class="menu-icon tf-icons"></i>
+                    <span class="title">Projects</span>
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="#" class="menu-link">
-                        All Sizes
+                        All Projects
                     </a>
                 </li>
                 <li class="menu-item">
@@ -335,29 +367,8 @@
 
 
 
-                    <!-- Informations -->
-                    <li class="menu-title small text-uppercase">
-                        <span class="menu-title-text">All Information</span>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle active">
 
-                            <i data-feather="at-sign" class="menu-icon tf-icons"></i>
-                            <span class="title">Infos</span>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item">
-                                <a href="#" class="menu-link">
-                                    All infos
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#" class="menu-link">
-                                    Create an info
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+
 
               <!-- Auth -->
               <li class="menu-title small text-uppercase">
@@ -399,16 +410,16 @@
             <div class="d-flex align-items-center admin-info border-top">
                 <div class="flex-shrink-0">
                     <a href="profile.html" class="d-block">
-                        {{-- <img src="{{ asset('dash/images/admin.jpg') }}" class="rounded-circle wh-54" alt="admin"> --}}
-                        @if(auth()->user()->photo === null)
+                        <img src="{{ asset('dash/images/admin.jpg') }}" class="rounded-circle wh-54" alt="admin">
+                        {{-- @if(auth()->user()->photo === null) --}}
                             {{-- <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt=""> --}}
-                        @else
+                        {{-- @else --}}
                             {{-- <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin"> --}}
-                        @endif
+                        {{-- @endif --}}
                     </a>
                 </div>
                 <div class="flex-grow-1 ms-3 info">
-                    <a href="#" class="d-block name">{{ auth()->user()->username }}</a>
+                    {{-- <a href="#" class="d-block name">{{ auth()->user()->username }}</a> --}}
                     <a href=""
                         onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a>
                     <form action="{{ route('logout') }}" id="logout-form" method="post">
@@ -468,20 +479,19 @@
                                         <div class="d-xxl-flex align-items-center bg-transparent border-0 text-start p-0 cursor"
                                             data-bs-toggle="dropdown">
                                             <div class="flex-shrink-0">
-                                                {{-- <img class="rounded-circle wh-54"
-                                                    src="{{ asset('dash/images/admin.jpg') }}" alt="admin"> --}}
-                                                {{-- @if(auth()->user()->photo === null)
-                                                    <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt="">
-                                                @else
-                                                    <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin">
-                                                @endif --}}
+                                               <img class="rounded-circle wh-54" src="{{ asset('dash/images/admin.jpg') }}" alt="admin">
+                                                 {{-- @if(auth()->user()->photo === null) --}}
+                                                    {{-- <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt=""> --}}
+                                                {{-- @else --}}
+                                                    {{-- <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin"> --}}
+                                                {{-- @endif --}}
                                             </div>
                                             <div class="flex-grow-1 ms-3">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <div class="d-none d-xxl-block">
-                                                        <span class="degeneration">{{ auth()->user()->role }}</span>
+                                                        {{-- <span class="degeneration">{{ auth()->user()->role }}</span> --}}
                                                         <div class="d-flex align-content-center">
-                                                            <h3>{{ auth()->user()->name }}</h3>
+                                                            {{-- <h3>{{ auth()->user()->name }}</h3> --}}
                                                             <div class="down">
                                                                 <i data-feather="chevron-down"></i>
                                                             </div>
@@ -534,9 +544,9 @@
 
             <div class="flex-grow-1"></div>
             <footer class="footer-area bg-white text-center rounded-top-10">
-                <p class="fs-14"> <span class="OSM">© </span><span class="text-primary">Protfolio</span> <span
+                <p class="fs-14"> <span class="OSM">©</span><span class="text-primary">Protfolio</span> <span
                         class="OSM">is Proudly Owned by</span> <a href="/" target="_blank"
-                        class="text-primary text-decoration-none">Hiba El arissi</a></p>
+                        class="text-primary text-decoration-none">Hiba El Farissi</a></p>
             </footer>
 
         </div>

@@ -69,8 +69,8 @@
                             <div class="breadcrumb__menu">
                                 <nav>
                                     <ul>
-                                        <li><span><a href="index.html">Home</a></span></li>
-                                        <li><span><a href="services.html">Service</a></span></li>
+                                        <li><span><a href="/">Home</a></span></li>
+                                        <li><span><a href="{{ url('Service') }}">Service</a></span></li>
                                         <li><span>Service Agency</span></li>
                                     </ul>
                                 </nav>
@@ -105,13 +105,13 @@
                                 <i class="icon-creative"></i>
                             </span>
                             <div class="service__content">
-                                <h5 class="service__title underline"><a href="service-details.html">Creative</a></h5>
+                                <h5 class="service__title underline"><a href="{{ url('Services-details') }}">Creative</a></h5>
                                 <p>In fields like design and product development, creating prototypes or conducting and
                                     works.</p>
                                 <div class="contentHidden">
-                                    <a class="contentHidden" href="service-details.html">contentHidden <span><i
+                                    <a class="contentHidden" href="{{ url('Services-details') }}">contentHidden <span><i
                                                 class="contentHidden"></i></span></a>
-                                    <a class="contentHidden" href="service-details.html"> <span class="contentHidden"><i
+                                    <a class="contentHidden" href="{{ url('Services-details') }}"> <span class="contentHidden"><i
                                                 class="assets/imgs/icons/arrow.png"> </i></span></a>
                                 </div>
                             </div>
@@ -127,14 +127,14 @@
                                 <i class="icon-ux-design"></i>
                             </span>
                             <div class="service__content">
-                                <h5 class="service__title underline"><a href="service-details.html">UX/UI Design</a>
+                                <h5 class="service__title underline"><a href="{{ url('Services-details') }}">UX/UI Design</a>
                                 </h5>
                                 <p>Mapping the steps a user takes within the product optimize their journey, and
                                     analysis and design.</p>
                                 <div class="contentHidden">
-                                    <a class="contentHidden" href="service-details.html">contentHidden <span><i
+                                    <a class="contentHidden" href="{{ url('Services-details') }}">contentHidden <span><i
                                                 class="contentHidden"></i></span></a>
-                                    <a class="contentHidden" href="service-details.html"> <span class="contentHidden"><i
+                                    <a class="contentHidden" href="{{ url('Services-details') }}"> <span class="contentHidden"><i
                                                 class="assets/imgs/icons/arrow.png"> </i></span></a>
                                 </div>
                             </div>
@@ -150,13 +150,13 @@
                                 <i class="icon-design"></i>
                             </span>
                             <div class="service__content">
-                                <h5 class="service__title underline"><a href="service-details.html">Web Design</a></h5>
+                                <h5 class="service__title underline"><a href="{{ url('Services-details') }}">Web Design</a></h5>
                                 <p>Visual design in web design refers to the aesthetics of website, including layout,
                                     colour schemes.</p>
                                 <div class="contentHidden">
-                                    <a class="contentHidden" href="service-details.html">contentHidden <span><i
+                                    <a class="contentHidden" href="{{ url('Services-details') }}">contentHidden <span><i
                                                 class="contentHidden"></i></span></a>
-                                    <a class="contentHidden" href="service-details.html"> <span class="contentHidden"><i
+                                    <a class="contentHidden" href="{{ url('Services-details') }}"> <span class="contentHidden"><i
                                                 class="assets/imgs/icons/arrow.png"> </i></span></a>
                                 </div>
                             </div>
@@ -172,13 +172,13 @@
                                 <i class="icon-project"></i>
                             </span>
                             <div class="service__content">
-                                <h5 class="service__title underline"><a href="service-details.html">Business</a></h5>
+                                <h5 class="service__title underline"><a href="{{ url('Services-details') }}">Business</a></h5>
                                 <p>Once the assessment is complete, consultants identify the specific challenges and
                                     grow business.</p>
                                 <div class="contentHidden">
-                                    <a class="contentHidden" href="service-details.html">contentHidden <span><i
+                                    <a class="contentHidden" href="{{ url('Services-details') }}">contentHidden <span><i
                                                 class="contentHidden"></i></span></a>
-                                    <a class="contentHidden" href="service-details.html"> <span class="contentHidden"><i
+                                    <a class="contentHidden" href="{{ url('Services-details') }}"> <span class="contentHidden"><i
                                                 class="assets/imgs/icons/arrow.png"> </i></span></a>
                                 </div>
                             </div>
@@ -434,53 +434,5 @@
         <!-- brand area end -->
 
 
-        <!-- cta area start -->
-        <div class="cta__area is-cta-margin fix">
-            <div class="container">
-                <div class="cta__wrapper cta__item is-sec-space">
-                    <div class="cta__bg"></div>
-                    <div class="cta__shape-wrap d-none d-md-block">
-                        <div class="cta__shape-one scene">
-                            <img class="layer" data-depth="5" src="assets/imgs/shape/circle-shape-02.png" alt="image">
-                        </div>
-                        <div class="cta__shape-two scene">
-                            <img class="layer" data-depth="6" src="assets/imgs/shape/circle-shape-03.png" alt="image">
-                        </div>
-                        <div class="cta__shape-three scene">
-                            <img class="layer" data-depth="7" src="assets/imgs/shape/circle-shape-03.png" alt="image">
-                        </div>
-                        <div class="cta__shape-four scene">
-                            <img class="layer" data-depth="8" src="assets/imgs/shape/circle-shape-02.png" alt="image">
-                        </div>
-                        <div class="cta__shape-five scene">
-                            <img class="layer" data-depth="9" src="assets/imgs/shape/circle-shape-03.png" alt="image">
-                        </div>
-                    </div>
-                    <div class="row align-items-center justify-content-center">
-                        <div class="col-xl-6 col-lg-7 col-md-10">
-                            <div class="cta__content-wrap">
-                                <div class="cta__content">
-                                    <div class="section__title-wrapper text-center ">
-                                        <div class="section__title-wrapper text-center">
-                                            <span class="section__subtitle bg-field">SUBSCRIBE</span>
-                                            <h2 class="section__title mb-20">Stay Informed with the Latest News</h2>
-                                            <p class="contentHidden">contentHidden</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cta__form">
-                                    <form action="#">
-                                        <div class="cta__input">
-                                            <input type="text" placeholder="Enter email">
-                                            <a href="contact.html" class="bd-btn is-bg-gradient">Submit Now</a>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- cta area end -->
+
 @endsection

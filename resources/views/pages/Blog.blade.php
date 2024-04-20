@@ -91,7 +91,7 @@
                         <div class="postbox__wrapper">
                             <article class="postbox__item">
                                 <div class="postbox__thumb">
-                                    <a href="blog-details.html">
+                                    <a href="#">
                                         <img src="assets/imgs/blog/post/blog-post-01.png" alt="image not found">
                                     </a>
                                 </div>
