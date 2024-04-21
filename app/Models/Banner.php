@@ -13,6 +13,7 @@ class Banner extends Model
         'bannerContact',
         'bannerAbout',
         'bannerClient',
+        'bannerTestimonials',
         'bannerService',
         'bannerServiceDetail',
         'bannerProject',

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('bannerContact');
             $table->string('bannerAbout');
             $table->string('bannerClient');
+            $table->string('bannerTestimonials');
             $table->string('bannerService');
             $table->string('bannerServiceDetail');
             $table->string('bannerProject');

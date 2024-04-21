@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BannersController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BlogDetailsController;
@@ -64,6 +65,7 @@ Route::resource('Categories', CategoriesController::class);
 Route::resource('Skills', SkillsController::class);
 Route::resource('Skills-Types', SkillsTypeController::class);
 Route::resource('visions', VisionsController::class);
+Route::resource('Article', ArticleController::class);
 
 
 

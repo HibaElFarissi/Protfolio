@@ -13,9 +13,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $Service_details=ServiceDetail::all();
+        // $Service_details=ServiceDetail::all();
         $Banners = Banner::paginate(1);
-        return view('pages.Services',compact('Service_details','Banners'));
+        return view('pages.Services',compact('Banners'));
     }
 
 }

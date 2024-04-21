@@ -39,6 +39,7 @@ class BannersController extends Controller
             'bannerContact' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
             'bannerAbout' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
             'bannerClient' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
+            'bannerTestimonials' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
             'bannerService' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
             'bannerServiceDetail' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
             'bannerProject' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
@@ -61,6 +62,12 @@ class BannersController extends Controller
         if ($request->hasFile('bannerClient')) {
             $bannerClient = $request->file('bannerClient')->store('Banners_photo', 'public');
             $validatedData['bannerClient'] = $bannerClient;
+        }
+
+        // BannerTestimonials
+        if ($request->hasFile('bannerTestimonials')) {
+            $bannerTestimonials = $request->file('bannerTestimonials')->store('Banners_photo', 'public');
+            $validatedData['bannerTestimonials'] = $bannerTestimonials;
         }
 
         // BannerService
@@ -128,6 +135,7 @@ class BannersController extends Controller
             'bannerContact' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
             'bannerAbout' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
             'bannerClient' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
+            'bannerTestimonials' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
             'bannerService' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
             'bannerServiceDetail' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
             'bannerProject' => 'image|mimes:jpeg,png,jpg,gif,svg|nullable',
@@ -151,6 +159,12 @@ class BannersController extends Controller
         if ($request->hasFile('bannerClient')) {
             $bannerClient = $request->file('bannerClient')->store('Banners_photo', 'public');
             $validatedData['bannerClient'] = $bannerClient;
+        }
+
+          // BannerTestimonials
+          if ($request->hasFile('bannerTestimonials')) {
+            $bannerTestimonials = $request->file('bannerTestimonials')->store('Banners_photo', 'public');
+            $validatedData['bannerTestimonials'] = $bannerTestimonials;
         }
 
         // BannerService

@@ -105,13 +105,13 @@
                                 <i class="icon-creative"></i>
                             </span>
                             <div class="service__content">
-                                <h5 class="service__title underline"><a href="{{ url('Services-details') }}">Creative</a></h5>
+                                <h5 class="service__title underline"><a href="#">Creative</a></h5>
                                 <p>In fields like design and product development, creating prototypes or conducting and
                                     works.</p>
                                 <div class="contentHidden">
-                                    <a class="contentHidden" href="{{ url('Services-details') }}">contentHidden <span><i
+                                    <a class="contentHidden" href="#">contentHidden <span><i
                                                 class="contentHidden"></i></span></a>
-                                    <a class="contentHidden" href="{{ url('Services-details') }}"> <span class="contentHidden"><i
+                                    <a class="contentHidden" href="#"> <span class="contentHidden"><i
                                                 class="assets/imgs/icons/arrow.png"> </i></span></a>
                                 </div>
                             </div>
@@ -127,14 +127,14 @@
                                 <i class="icon-ux-design"></i>
                             </span>
                             <div class="service__content">
-                                <h5 class="service__title underline"><a href="{{ url('Services-details') }}">UX/UI Design</a>
+                                <h5 class="service__title underline"><a href="#">UX/UI Design</a>
                                 </h5>
                                 <p>Mapping the steps a user takes within the product optimize their journey, and
                                     analysis and design.</p>
                                 <div class="contentHidden">
-                                    <a class="contentHidden" href="{{ url('Services-details') }}">contentHidden <span><i
+                                    <a class="contentHidden" href="#">contentHidden <span><i
                                                 class="contentHidden"></i></span></a>
-                                    <a class="contentHidden" href="{{ url('Services-details') }}"> <span class="contentHidden"><i
+                                    <a class="contentHidden" href="#"> <span class="contentHidden"><i
                                                 class="assets/imgs/icons/arrow.png"> </i></span></a>
                                 </div>
                             </div>
@@ -150,13 +150,13 @@
                                 <i class="icon-design"></i>
                             </span>
                             <div class="service__content">
-                                <h5 class="service__title underline"><a href="{{ url('Services-details') }}">Web Design</a></h5>
+                                <h5 class="service__title underline"><a href="#">Web Design</a></h5>
                                 <p>Visual design in web design refers to the aesthetics of website, including layout,
                                     colour schemes.</p>
                                 <div class="contentHidden">
-                                    <a class="contentHidden" href="{{ url('Services-details') }}">contentHidden <span><i
+                                    <a class="contentHidden" href="#">contentHidden <span><i
                                                 class="contentHidden"></i></span></a>
-                                    <a class="contentHidden" href="{{ url('Services-details') }}"> <span class="contentHidden"><i
+                                    <a class="contentHidden" href="#"> <span class="contentHidden"><i
                                                 class="assets/imgs/icons/arrow.png"> </i></span></a>
                                 </div>
                             </div>
@@ -172,13 +172,13 @@
                                 <i class="icon-project"></i>
                             </span>
                             <div class="service__content">
-                                <h5 class="service__title underline"><a href="{{ url('Services-details') }}">Business</a></h5>
+                                <h5 class="service__title underline"><a href="#">Business</a></h5>
                                 <p>Once the assessment is complete, consultants identify the specific challenges and
                                     grow business.</p>
                                 <div class="contentHidden">
-                                    <a class="contentHidden" href="{{ url('Services-details') }}">contentHidden <span><i
+                                    <a class="contentHidden" href="#">contentHidden <span><i
                                                 class="contentHidden"></i></span></a>
-                                    <a class="contentHidden" href="{{ url('Services-details') }}"> <span class="contentHidden"><i
+                                    <a class="contentHidden" href="#"> <span class="contentHidden"><i
                                                 class="assets/imgs/icons/arrow.png"> </i></span></a>
                                 </div>
                             </div>
