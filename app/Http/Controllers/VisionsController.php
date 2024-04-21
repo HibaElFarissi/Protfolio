@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Visions;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class VisionsController extends Controller
 {
@@ -37,6 +38,7 @@ class VisionsController extends Controller
         ]);
 
         Visions::create($validatedData);
+        Alert::success('succes', 'The Service-vision has been Added successfully');
         return to_route('visions.index');
     }
 
@@ -70,6 +72,7 @@ class VisionsController extends Controller
 
         $Service_vision=Visions::findOrFail($id);
         $Service_vision->update($validatedData);
+        Alert::success('succes', 'The Service-vision has been Updated successfully');
         return to_route('visions.index');
     }
 

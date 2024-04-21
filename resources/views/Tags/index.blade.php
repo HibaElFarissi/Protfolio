@@ -1,6 +1,11 @@
-@extends('layouts.dashboardnav')
+@extends('layouts.DashAdmin_nav')
 
 @section('content')
+@include('sweetalert::alert')
+@include('layouts.errors-notif')
+
+<br>
+
     <div class="d-sm-flex text-center justify-content-between align-items-center mb-4">
         <h3 class="mb-sm-0 mb-1 fs-18">Tags</h3>
         <ul class="ps-0 mb-0 list-unstyled d-flex justify-content-center">
@@ -36,7 +41,7 @@
                                 <thead>
                                     <tr class="text-center">
                                         <th scope="col" class="text-primary text-start">Name</th>
-                                        <th scope="col">Listed Date</th>
+                                        <th scope="col">Last Date</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -131,3 +136,4 @@
         </div>
     </div>
 @endsection
+

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categorie;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CategoriesController extends Controller
 {
@@ -37,6 +38,7 @@ class CategoriesController extends Controller
         ]);
 
         Categorie::create($validatedData);
+        Alert::success('succes', 'The Categorie has been Added successfully');
         return to_route('Categories.index');
     }
 
@@ -71,7 +73,7 @@ class CategoriesController extends Controller
 
         $Categorie=Categorie::findOrFail($id);
         $Categorie->update($validatedData);
-
+        Alert::success('succes', 'The Categorie has been Updated successfully');
         return to_route('Categories.index');
     }
 

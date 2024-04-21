@@ -14,6 +14,28 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
+
+     public function index(Request $request): View
+    {
+        return view('profile.profile', [
+            'user' => $request->user(),
+        ]);
+    }
+
+    public function update_password(Request $request): View
+    {
+        return view('profile.update-password', [
+            'user' => $request->user(),
+        ]);
+    }
+
+    public function delete_user(Request $request): View
+    {
+        return view('profile.delete-user', [
+            'user' => $request->user(),
+        ]);
+    }
+
     public function edit(Request $request): View
     {
         return view('profile.edit', [
@@ -30,6 +52,19 @@ class ProfileController extends Controller
 
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
+        }
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+
+            // Generate a unique filename
+            $imageName = time() . '.' . $photo->getClientOriginalExtension();
+
+            // Store the image in the public/storage directory
+            $photo->storeAs('profile_pictures', $imageName, 'public');
+
+            // Update user record with the image path
+            $request->user()->update(['photo' => $imageName]);
         }
 
         $request->user()->save();

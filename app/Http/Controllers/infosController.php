@@ -16,6 +16,7 @@ class infosController extends Controller
         //
         $infos = info::paginate(1);
         return  view('infos.index', compact('infos'));
+        Alert::success('succes', 'The Information has been Added successfully');
     }
 
     /**
@@ -82,9 +83,9 @@ class infosController extends Controller
     public function edit(string $id)
     {
         //
-        $infos = info::findOrFail($id);
+        $info = info::findOrFail($id);
         $isUpdate = true;
-        return view('infos.form', compact('isUpdate','infos'));
+        return view('infos.form', compact('isUpdate','info'));
     }
 
     /**

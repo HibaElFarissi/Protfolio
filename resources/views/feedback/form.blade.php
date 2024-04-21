@@ -1,7 +1,5 @@
-{{-- @extends('layouts.base') --}}
-{{-- @extends('layouts.Dashboard_nav') --}}
-@extends('layouts.DashAdmin_nav')
 
+@extends('layouts.DashAdmin_nav')
 @section('title', ($isUpdate ? 'Update' : 'Create') . ' Feedback')
 
 @php

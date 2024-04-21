@@ -16,6 +16,7 @@ use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ProtfolioController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceDetailsController;
 use App\Http\Controllers\SkillsController;
@@ -66,6 +67,7 @@ Route::resource('Skills', SkillsController::class);
 Route::resource('Skills-Types', SkillsTypeController::class);
 Route::resource('visions', VisionsController::class);
 Route::resource('Article', ArticleController::class);
+Route::resource('Protfolio',ProtfolioController::class);
 
 
 
@@ -76,14 +78,18 @@ Route::middleware('auth')->group(function () {
     });
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/delete-user', [ProfileController::class, 'delete_user'])->name('delete_user');
+    Route::get('/update-password', [ProfileController::class, 'update_password'])->name('update_password');
+    Route::get('/profile-details', [ProfileController::class, 'index'])->name('profile');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 require __DIR__.'/auth.php';

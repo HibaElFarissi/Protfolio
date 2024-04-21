@@ -147,7 +147,7 @@
                             Orders List
                             </a>
                         </li>
-                        
+
                         <li class="menu-item">
                             <a href="#" class="menu-link">
                             Orders List
@@ -165,7 +165,7 @@
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="{{ route('Banner.index') }}" class="menu-link">
+                        <a href="{{ route('banners.index') }}" class="menu-link">
                             Banner Show
                         </a>
                     </li>
@@ -186,13 +186,13 @@
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{{ route('Article.index') }}" class="menu-link">
                         All Articles
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{{ route('Article.create') }}" class="menu-link">
                         Create An Article
                         </a>
                     </li>
@@ -208,13 +208,13 @@
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{{ route('Educations.index') }}" class="menu-link">
                         All Education
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{{ route('Educations.create') }}" class="menu-link">
                         Create An Education
                         </a>
                     </li>
@@ -231,20 +231,17 @@
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{{ route('Experiences.index') }}" class="menu-link">
                         All Experiences
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{{ route('Experiences.create') }}" class="menu-link">
                         Create An Experience
                         </a>
                     </li>
                 </ul>
-
-
-
 
 
 
@@ -277,12 +274,12 @@
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('Skills.index') }}" class="menu-link">
                         All skills
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('Skills.create') }}" class="menu-link">
                     Create
                     </a>
                 </li>
@@ -298,7 +295,7 @@
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('Categories.index') }}" class="menu-link">
                         All Categories
                     </a>
                 </li>
@@ -314,7 +311,7 @@
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('Tags.index') }}" class="menu-link">
                         All Tags
                     </a>
                 </li>
@@ -330,12 +327,12 @@
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('Service.index') }}" class="menu-link">
                         All Services
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('Service.create') }}" class="menu-link">
                     Create
                     </a>
                 </li>
@@ -353,19 +350,16 @@
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('Protfolio.index') }}" class="menu-link">
                         All Projects
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{{ route('Protfolio.create') }}" class="menu-link">
                     Create
                     </a>
                 </li>
             </ul>
-
-
-
 
 
 
@@ -381,22 +375,22 @@
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{{ route('profile') }}" class="menu-link">
                             Profile
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{{ route('profile.edit') }}" class="menu-link">
                             Account
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{{ route('update_password') }}" class="menu-link">
                             Security
                         </a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="menu-link">
+                        <a href="{{ route('delete_user') }}" class="menu-link">
                             Delete
                         </a>
                     </li>
@@ -411,15 +405,15 @@
                 <div class="flex-shrink-0">
                     <a href="profile.html" class="d-block">
                         <img src="{{ asset('dash/images/admin.jpg') }}" class="rounded-circle wh-54" alt="admin">
-                        {{-- @if(auth()->user()->photo === null) --}}
+                        @if(auth()->user()->photo === null)
                             {{-- <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt=""> --}}
-                        {{-- @else --}}
-                            {{-- <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin"> --}}
-                        {{-- @endif --}}
+                        @else
+                            <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin">
+                        @endif
                     </a>
                 </div>
                 <div class="flex-grow-1 ms-3 info">
-                    {{-- <a href="#" class="d-block name">{{ auth()->user()->username }}</a> --}}
+                    <a href="#" class="d-block name">{{ auth()->user()->username }}</a>
                     <a href=""
                         onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a>
                     <form action="{{ route('logout') }}" id="logout-form" method="post">
@@ -480,18 +474,18 @@
                                             data-bs-toggle="dropdown">
                                             <div class="flex-shrink-0">
                                                <img class="rounded-circle wh-54" src="{{ asset('dash/images/admin.jpg') }}" alt="admin">
-                                                 {{-- @if(auth()->user()->photo === null) --}}
+                                                 @if(auth()->user()->photo === null)
                                                     {{-- <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt=""> --}}
-                                                {{-- @else --}}
-                                                    {{-- <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin"> --}}
-                                                {{-- @endif --}}
+                                                @else
+                                                    <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin">
+                                                @endif
                                             </div>
                                             <div class="flex-grow-1 ms-3">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <div class="d-none d-xxl-block">
-                                                        {{-- <span class="degeneration">{{ auth()->user()->role }}</span> --}}
+                                                        <span class="degeneration">{{ auth()->user()->role }}</span>
                                                         <div class="d-flex align-content-center">
-                                                            {{-- <h3>{{ auth()->user()->name }}</h3> --}}
+                                                            <h3>{{ auth()->user()->name }}</h3>
                                                             <div class="down">
                                                                 <i data-feather="chevron-down"></i>
                                                             </div>
@@ -544,11 +538,10 @@
 
             <div class="flex-grow-1"></div>
             <footer class="footer-area bg-white text-center rounded-top-10">
-                <p class="fs-14"> <span class="OSM">©</span><span class="text-primary">Protfolio</span> <span
-                        class="OSM">is Proudly Owned by</span> <a href="/" target="_blank"
+                <p class="fs-14"> <span class="TSM">©</span><span class="text-primary">Protfolio</span> <span
+                        class="TSM">is Proudly Owned by</span> <a href="/" target="_blank"
                         class="text-primary text-decoration-none">Hiba El Farissi</a></p>
             </footer>
-
         </div>
     </div>
 
@@ -622,6 +615,6 @@
     <script src="{{ asset('dash/js/custom/custom.js') }}"></script>
 </body>
 
-<!-- Mirrored from templates.hibootstrap.com/Magic Shop/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Feb 2024 15:49:17 GMT -->
+<!-- Mirrored from HibaElFarissi/Protfolio/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Feb 2024 15:49:17 GMT -->
 
 </html>
