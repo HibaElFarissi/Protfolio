@@ -13,6 +13,7 @@ use App\Http\Controllers\EducationController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\infosController;
 use App\Http\Controllers\LogoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
@@ -57,6 +58,7 @@ Route::post('/email', [EmailController::class, 'sendEmail'])->name('send.email')
 
 // Pages:
 Route::resource('logo',LogoController::class);
+Route::resource('infos',infosController ::class);
 Route::resource('feedback',FeedbackController::class);
 Route::resource('banners',BannersController::class);
 Route::resource('Educations', EducationController::class);

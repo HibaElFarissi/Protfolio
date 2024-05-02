@@ -14,7 +14,8 @@ class infosController extends Controller
     public function index()
     {
         //
-        $infos = info::paginate(1);
+        $infos = info::all();
+        // $info = info::paginate(4);
         return  view('infos.index', compact('infos'));
         Alert::success('succes', 'The Information has been Added successfully');
     }
@@ -26,9 +27,9 @@ class infosController extends Controller
     {
         //
 
-        $infos = new info();
+        $info = new info();
         $isUpdate = false;
-        return view('infos.form', compact('infos', 'isUpdate'));
+        return view('infos.form', compact('info', 'isUpdate'));
     }
 
     /**
@@ -41,7 +42,7 @@ class infosController extends Controller
             'name' => 'required',
             'job' => 'required',
             'description' => 'required',
-            'image1' => 'image|required',
+            'image1' => 'image|nullable',
             'image2' => 'image|nullable',
             'facebook' => 'required',
             'github' => 'required',
@@ -98,8 +99,8 @@ class infosController extends Controller
             'name' => 'required',
             'job' => 'required',
             'description' => 'required',
-            'image1' => 'required',
-            'image2' => 'nullable',
+            'image1' => 'image|nullable',
+            'image2' => 'image|nullable',
             'facebook' => 'required',
             'github' => 'required',
             'linkedin' => 'required',

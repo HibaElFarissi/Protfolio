@@ -308,7 +308,7 @@
         <div class="footer__copyright style-two">
             <div class="container">
                 <div class="footer__copyright">
-                    <p>Copyright @ <?php echo date("Y") ?> <a href="/">Hiba EL Farissi.</a> All Right Reserved</p>
+                    <p>Copyright @  2024 <a href="/">Hiba EL Farissi.</a> All Right Reserved</p>
                 </div>
             </div>
         </div>

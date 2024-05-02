@@ -100,12 +100,12 @@
                     </a>
                     <ul class="menu-sub">
                         <li class="menu-item">
-                            <a href="#" class="menu-link">
+                            <a href="{{ route('infos.index') }}" class="menu-link">
                                 All infos
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a href="#" class="menu-link">
+                            <a href="{{ route('infos.create') }}" class="menu-link">
                                 Create an info
                             </a>
                         </li>

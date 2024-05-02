@@ -117,9 +117,9 @@
                         <label class="label">vision Name</label>
                         <input type="text" name="name" class="form-control text-dark @error('name') is-invalid @enderror" placeholder="vision Name" value="{{ old('name') }}" required>
                     </div>
-                    @error('name')
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
+                        @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     <div class="form-group d-flex gap-3">
                         <button class="btn btn-primary text-white fw-semibold py-2 px-2 px-sm-3" type="submit">
                             <span class="py-sm-1 d-block">
@@ -132,5 +132,9 @@
             </form>
         </div>
     </div>
-@endsection
+
+
+    <div class="flex-grow-1"></div>
+    {{$Service_visions->links()}}
+    @endsection
 

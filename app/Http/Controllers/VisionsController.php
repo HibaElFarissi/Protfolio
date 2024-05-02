@@ -14,7 +14,7 @@ class VisionsController extends Controller
     public function index()
     {
         //
-        $Service_visions=Visions::all();
+        $Service_visions=Visions::paginate(3);
         return view('visions.index' , compact('Service_visions'));
     }
 

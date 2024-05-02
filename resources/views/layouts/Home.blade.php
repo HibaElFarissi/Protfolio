@@ -1117,7 +1117,7 @@
                                     </div>
                                     <div class="form__input style-three">
                                         {{-- <input name="fname" id="fname" type="text" placeholder="Your Name"> --}}
-                                        <input type="text" name="name"  type="text" class="form-control" name="name"  placeholder="Your Name" data-validate = "Name is required">
+                                        <input class="text-white" type="text" name="name"  type="text" class="form-control" name="name"  placeholder="Your Name" data-validate = "Name is required">
                                         <div class="contentHidden"><span><i class="fa-solid fa-house"></i></span></div>
                                     </div>
                                 </div>
@@ -1129,7 +1129,7 @@
                                     </div>
                                     <div class="form__input style-three">
                                         {{-- <input name="lname" id="lname" type="text" placeholder="Company Name"> --}}
-                                        <input type="text" name="company"  type="text" class="form-control" name="name"  placeholder="Company Name" data-validate = "Company name is required">
+                                        <input class="text-white" type="text" name="company"  type="text" class="form-control" name="name"  placeholder="Company Name" data-validate = "Company name is required">
                                             @error('message')
                                                 <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -1143,7 +1143,7 @@
                                         <label for="text">Email Adress<span>*</span></label>
                                     </div>
                                     <div class="form__input style-three">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                        <input class="text-white" type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                                         @error('name')
                                             <span class="text-danger"> {{ $message }} </span>
                                         @enderror
@@ -1157,7 +1157,7 @@
                                         <label for="text">contentHidden<span>*</span></label>
                                     </div>
                                     <div class="form__input style-three">
-                                        <input name="phone" id="phone" type="text" placeholder="Phone Number">
+                                        <input class="text-white" name="phone" id="phone" type="text" placeholder="Phone Number">
                                             @error('message')
                                                  <span class="text-danger"> {{ $message }} </span>
                                             @enderror
@@ -1174,7 +1174,7 @@
                                     </div> --}}
 
                                     <div class="form__input style-three">
-                                        <textarea class="form-control" name="message" rows="5" placeholder="A Few Words"  data-validate = "Message is required"></textarea>
+                                        <textarea class="form-control text-white" style="font-size: 17px;" name="message" rows="5" placeholder="A Few Words"  data-validate = "Message is required"></textarea>
                                             @error('message')
                                                 <span class="text-danger"> {{ $message }} </span>
                                             @enderror
