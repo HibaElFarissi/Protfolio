@@ -38,7 +38,7 @@ class SkillsController extends Controller
         $validatedData = $request->validate([
             'name'=> 'required',
             'image'=> 'nullable|image|mimes:png,jpg,svg,jpeg',
-            'SkillsType_id'=> 'required',
+            'skills_type_id'=> 'required',
         ]);
 
         if($request->hasFile('image')){
@@ -78,7 +78,7 @@ class SkillsController extends Controller
         $validatedData = $request->validate([
             'name'=> 'required',
             'image'=> 'nullable|image|mimes:png,jpg,svg,jpeg',
-            'SkillsType_id'=> 'required',
+            'skills_type_id'=> 'required',
         ]);
 
         if($request->hasFile('image')){

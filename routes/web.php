@@ -39,7 +39,7 @@ Route::get('/', function () {
 // pages:
 
 Route::resource('About', AboutController::class);
-Route::resource('Service', ServiceController::class);
+Route::get('Our-services', [ServiceController::class,'affichage'])->name('Our-services');
 Route::resource('Service-details', ServiceDetailsController::class);
 Route::resource('Blog', BlogController::class);
 Route::resource('Blog-details', BlogDetailsController::class);
@@ -69,7 +69,9 @@ Route::resource('Skills', SkillsController::class);
 Route::resource('Skills-Types', SkillsTypeController::class);
 Route::resource('visions', VisionsController::class);
 Route::resource('Article', ArticleController::class);
-Route::resource('Protfolio',ProtfolioController::class);
+Route::resource('Protfolios',ProtfolioController::class);
+Route::resource('Service', ServiceController::class);
+
 
 
 

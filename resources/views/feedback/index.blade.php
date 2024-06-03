@@ -59,7 +59,8 @@
             <td>
                 <div class="form-check p-0 d-flex align-items-center">
                     <a href="#" class="d-flex align-items-center ms-4">
-                        <img src="storage/{{ $feedback->image }}" class="wh-44 rounded"  alt="Feedback">
+                        {{-- <img src="asset('storage/.{{ $feedback->image }}')" class="wh-44 rounded"  alt="Feedback"> --}}
+                        <img src="{{ asset('storage/' . $feedback->image) }}" class="wh-44 rounded" alt="Feedback">
                     </a>
                 </div>
             </td>

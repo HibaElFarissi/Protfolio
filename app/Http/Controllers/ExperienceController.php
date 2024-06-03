@@ -13,7 +13,7 @@ class ExperienceController extends Controller
     public function index()
     {
         //
-        $Experiences=Experience::all();
+        $Experiences=Experience::paginate(3);
         return view('Experiences.index' , compact('Experiences'));
     }
 
@@ -23,7 +23,9 @@ class ExperienceController extends Controller
     public function create()
     {
         //
-        return view('Experiences.index');
+        $Experiences = new Experience();
+        $isUpdate = false;
+        return view('Experiences.form', compact('Experiences', 'isUpdate'));
     }
 
     /**
@@ -38,7 +40,7 @@ class ExperienceController extends Controller
             'Start_Date'=> 'required',
             'End_Date'=> 'required',
             'subject'=> 'required',
-            'description'=> 'min:50|nullable',
+            'description'=> 'nullable',
         ]);
 
         Experience::create($validatedData);
@@ -59,8 +61,9 @@ class ExperienceController extends Controller
     public function edit(string $id)
     {
         //
-        $Experience = Experience::findOrFail($id);
-        return view('Experiences.edit', compact('Experience'));
+        $Experience=Experience::findOrFail($id);
+        $isUpdate = true;
+        return view('Experiences.form', compact('Experience', 'isUpdate'));
     }
 
     /**
@@ -76,7 +79,7 @@ class ExperienceController extends Controller
             'Start_Date'=> 'required',
             'End_Date'=> 'required',
             'subject'=> 'required',
-            'description'=> 'min:50|nullable',
+            'description'=> 'nullable',
         ]);
 
         $Experience=Experience::findOrFail($id);

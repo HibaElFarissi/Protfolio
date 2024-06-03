@@ -350,12 +350,12 @@
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{ route('Protfolio.index') }}" class="menu-link">
+                    <a href="{{ route('Protfolios.index') }}" class="menu-link">
                         All Projects
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('Protfolio.create') }}" class="menu-link">
+                    <a href="{{ route('Protfolios.create') }}" class="menu-link">
                     Create
                     </a>
                 </li>
@@ -404,9 +404,9 @@
             <div class="d-flex align-items-center admin-info border-top">
                 <div class="flex-shrink-0">
                     <a href="profile.html" class="d-block">
-                        <img src="{{ asset('dash/images/admin.jpg') }}" class="rounded-circle wh-54" alt="admin">
+                        {{-- <img src="{{ asset('dash/images/admin.jpg') }}" class="rounded-circle wh-54" alt="admin"> --}}
                         @if(auth()->user()->photo === null)
-                            {{-- <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt=""> --}}
+                            <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt="">
                         @else
                             <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin">
                         @endif
@@ -473,9 +473,9 @@
                                         <div class="d-xxl-flex align-items-center bg-transparent border-0 text-start p-0 cursor"
                                             data-bs-toggle="dropdown">
                                             <div class="flex-shrink-0">
-                                               <img class="rounded-circle wh-54" src="{{ asset('dash/images/admin.jpg') }}" alt="admin">
+                                               {{-- <img class="rounded-circle wh-54" src="{{ asset('dash/images/admin.jpg') }}" alt="admin"> --}}
                                                  @if(auth()->user()->photo === null)
-                                                    {{-- <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt=""> --}}
+                                                    <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt="">
                                                 @else
                                                     <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin">
                                                 @endif

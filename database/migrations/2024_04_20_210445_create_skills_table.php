@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
-            $table->unsignedBigInteger('Skills_type');
-            $table->foreign('Skills_type_id')->references('id')->on('skills_types');
+            $table->unsignedBigInteger('skills_types');
+            $table->foreign('skills_type_id')->references('id')->on('skills_types');
             $table->timestamps();
         });
     }

@@ -24,9 +24,9 @@ class BannersController extends Controller
     public function create()
     {
         //
-        $banners = new Banner();
+        $banner = new Banner();
         $isUpdate = false;
-        return view('banners.form', compact('banners', 'isUpdate'));
+        return view('banners.form', compact('banner', 'isUpdate'));
     }
 
     /**
@@ -120,15 +120,15 @@ class BannersController extends Controller
     public function edit(string $id)
     {
         //
-        $banners = Banner::findOrFail($id);
+        $banner = Banner::findOrFail($id);
         $isUpdate = true;
-        return view('banners.form', compact('isUpdate','banners'));
+        return view('banners.form', compact('isUpdate','banner'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Banner $banners)
+    public function update(Request $request, Banner $banner)
     {
         //
         $validatedData = $request->validate([
@@ -197,7 +197,7 @@ class BannersController extends Controller
             $validatedData['bannerBlogDetail'] = $bannerBlogDetail;
         }
 
-        $banners->update($validatedData);
+        $banner->update($validatedData);
 
         Alert::success('succes', 'Banner has been updated successfully');
         return to_route('banners.index');
@@ -210,9 +210,9 @@ class BannersController extends Controller
     public function destroy(string $id)
     {
         //
-        $banners=Banner::findOrFail($id);
-        $banners->delete();
+        $banner=Banner::findOrFail($id);
+        $banner->delete();
         Alert::success('succes', 'The Banner has been Deleted successfully');
-        return to_route('banners.index', compact('banners'));
+        return to_route('banners.index', compact('banner'));
     }
 }

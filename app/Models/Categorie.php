@@ -11,7 +11,11 @@ class Categorie extends Model
 
     protected $table = 'categories';
 
-    protected $fillable =[
+    protected $fillable = [
         'name',
     ];
+
+    public function Protfolio(){
+        return $this->hasMany(Protfolio::class);
+    }
 }

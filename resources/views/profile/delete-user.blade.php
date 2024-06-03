@@ -1,8 +1,10 @@
+{{-- @extends('layouts.DashAdmin_nav') --}}
+{{-- @extends('layouts.DashProfile'); --}}
 
 @extends('layouts.DashTry')
 @section('content')
 <div class="d-sm-flex text-center justify-content-between align-items-center mb-4">
-    <h3 class="mb-sm-0 mb-1 fs-18">Delete Account</h3>
+    <h3 class="mb-sm-0 mb-1 fs-18">Supprimer le compte</h3>
     <ul class="ps-0 mb-0 list-unstyled d-flex justify-content-center">
         <li>
             <a href="/" class="text-decoration-none">
@@ -11,7 +13,7 @@
             </a>
         </li>
         <li>
-            <span class="fw-semibold fs-14 heading-font text-dark dot ms-2">Delete Account</span>
+            <span class="fw-semibold fs-14 heading-font text-dark dot ms-2">Supprimer le compte</span>
         </li>
     </ul>
 </div>
@@ -19,7 +21,7 @@
     <div class="col-xxl-9">
         <div class="card bg-white border-0 rounded-10 mb-4">
             <div class="card-body p-4">
-                <h4 class="fw-semibold fs-18 border-bottom pb-20 mb-20">Delete Account</h4>
+                <h4 class="fw-semibold fs-18 border-bottom pb-20 mb-20">Supprimer le compte</h4>
                 <ul class="ps-0 mb-4 list-unstyled d-sm-flex gap-3">
                     <li>
                         <a href="{{route('profile.edit')}}"
@@ -36,15 +38,11 @@
 
                 </ul>
                 <div class="border-bottom pb-3 mb-3">
-                    <h4 class="fs-18 fw-semibold mb-1">Delete Account</h4>
+                    <h4 class="fs-18 fw-semibold mb-1">Supprimer le compte</h4>
                     <p class="fs-15">Une fois votre compte supprimé, toutes ses ressources et données seront définitivement supprimées. Veuillez saisir votre mot de passe pour confirmer que vous souhaitez supprimer définitivement votre compte.</p>
                 </div>
                 @include('profile.partials.delete-user-form')
             </div>
         </div>
-
-
-
-
 
 @endsection

@@ -1,4 +1,3 @@
-
 @extends('layouts.DashTry')
 @section('content')
 
@@ -86,5 +85,6 @@
                     </ul>
                 </div>
             </div>
+
 
         @endsection

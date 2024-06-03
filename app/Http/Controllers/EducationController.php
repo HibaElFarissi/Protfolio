@@ -13,7 +13,7 @@ class EducationController extends Controller
     public function index()
     {
         //
-        $Educations=Education::all();
+        $Educations=Education::paginate(3);
         return view('Educations.index' , compact('Educations'));
     }
 
@@ -23,7 +23,9 @@ class EducationController extends Controller
     public function create()
     {
         //
-        return view('Educations.index');
+        $Educations = new Education();
+        $isUpdate = false;
+        return view('Educations.form', compact('Educations' , 'isUpdate'));
     }
 
     /**
@@ -37,7 +39,7 @@ class EducationController extends Controller
             'specialty'=> 'required',
             'Start_Date'=> 'required',
             'End_Date'=> 'required',
-            'description'=> 'min:25|nullable',
+            'description'=> 'nullable',
         ]);
 
         Education::create($validatedData);
@@ -74,7 +76,7 @@ class EducationController extends Controller
             'specialty'=> 'required',
             'Start_Date'=> 'required',
             'End_Date'=> 'required',
-            'description'=> 'min:25|nullable',
+            'description'=> 'nullable',
 
         ]);
 

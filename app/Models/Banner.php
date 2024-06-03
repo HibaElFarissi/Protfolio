@@ -10,7 +10,6 @@ class Banner extends Model
     use HasFactory;
 
     protected $fillable = [
-        'bannerContact',
         'bannerAbout',
         'bannerClient',
         'bannerTestimonials',
@@ -19,5 +18,6 @@ class Banner extends Model
         'bannerProject',
         'bannerBlog',
         'bannerBlogDetail',
+        'bannerContact',
     ];
 }
