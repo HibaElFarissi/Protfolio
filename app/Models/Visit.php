@@ -5,13 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Visions extends Model
+class Visit extends Model
 {
     use HasFactory;
 
-    protected $table = 'visions';
+    protected $table = 'visits';
 
-    protected $fillable =[
-        'name',
+    protected $fillable = [
+        'ip_address',
+        'user_agent',
+        'page_visited',
     ];
 }

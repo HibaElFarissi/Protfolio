@@ -34,9 +34,11 @@ class LogoController extends Controller
     public function store(Request $request)
     {
         //
-        $fromFields = $request->validated();
+        $fromFields = $request->validate(
+            ['image' => 'nullable'],
+        );
         if ($request->hasFile('image')) {
-        // $fromFields['image'] = $request->file('image')->store('product' , 'public');
+        $fromFields['image'] = $request->file('image')->store('product' , 'public');
         $fromFields['image']=$this->uploadImage($request);
     }
     //
@@ -56,6 +58,7 @@ class LogoController extends Controller
     public function edit(string $id)
     {
         //
+        $logo = Logo::findOrFail($id);
         $isUpdate = true;
         return view('logo.form', compact('logo', 'isUpdate'));
     }
@@ -67,7 +70,9 @@ class LogoController extends Controller
     {
         //
 
-        $logo->fill($request->validated());
+        $logo->fill($request->validate(
+            ['image' => 'nullable'],
+        ));
         $fromFields['image']=$this->uploadImage($request);
         $logo->fill($fromFields)->save();
 

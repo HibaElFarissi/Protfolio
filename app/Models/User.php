@@ -23,6 +23,15 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function blog(){
+        return $this->hasMany(Article::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

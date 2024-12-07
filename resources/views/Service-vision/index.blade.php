@@ -1,13 +1,11 @@
 @extends('layouts.DashAdmin_nav')
 
-@section('content')
 @include('sweetalert::alert')
 @include('layouts.errors-notif')
 
-<br>
-
+@section('content')
     <div class="d-sm-flex text-center justify-content-between align-items-center mb-4">
-        <h3 class="mb-sm-0 mb-1 fs-18">Service-visions</h3>
+        <h3 class="mb-sm-0 mb-1 fs-18">Service vision</h3>
         <ul class="ps-0 mb-0 list-unstyled d-flex justify-content-center">
             <li>
                 <a href="{{route('admin.dashboard')}}" class="text-decoration-none">
@@ -16,7 +14,7 @@
                 </a>
             </li>
             <li>
-                <span class="fw-semibold fs-14 heading-font text-dark dot ms-2">Service-visions</span>
+                <span class="fw-semibold fs-14 heading-font text-dark dot ms-2">Service vision</span>
             </li>
         </ul>
     </div>
@@ -26,12 +24,12 @@
             <div class="card bg-white border-0 rounded-10 mb-4">
                 <div class="card-body p-4">
                     <div class="d-sm-flex justify-content-between text-center align-items-center border-bottom pb-20 mb-20">
-                        <h4 class="fw-semibold fs-18 mb-sm-0">Service-visions</h4>
+                        <h4 class="fw-semibold fs-18 mb-sm-0">Service vision</h4>
                         <button class="border-0 btn btn-primary py-2 px-4 text-white fs-14 fw-semibold rounded-3"
                             data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                             <span class="py-sm-1 d-block">
                                 <i class="ri-add-line text-white"></i>
-                                <span>Create vision</span>
+                                <span>Create Service vision</span>
                             </span>
                         </button>
                     </div>
@@ -41,25 +39,25 @@
                                 <thead>
                                     <tr class="text-center">
                                         <th scope="col" class="text-primary text-start">Name</th>
-                                        <th scope="col">Last Date</th>
+                                        <th scope="col">Listed Date</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ( $Service_visions as $Service_vision )
+                                    @forelse ( $Service_visions as $item )
                                     <tr class="text-center">
 
                                         <td class="text-start">
                                             <div class="d-flex align-items-center">
 
                                                 <div class="flex-grow-1 ms-10">
-                                                    <h4 class="fw-semibold fs-14 mb-0">{{ $Service_vision->name }}</h4>
+                                                    <h4 class="fw-semibold fs-14 mb-0">{{$item->name}}</h4>
                                                 </div>
                                             </div>
                                         </td>
 
                                         <td>
-                                            <span>{{$Service_vision->updated_at}}</span>
+                                            <span>{{$item->updated_at}}</span>
                                         </td>
 
                                         <td>
@@ -71,7 +69,7 @@
                                                 <ul class="dropdown-menu dropdown-menu-end bg-white border box-shadow">
 
                                                     <li>
-                                                        <a class="dropdown-item" href="{{ route('visions.edit', $Service_vision->id) }}">
+                                                        <a class="dropdown-item" href="{{ route('Service-vision.edit', $item->id) }}">
                                                             <i data-feather="edit-3"></i>
                                                             Rename
                                                         </a>
@@ -79,7 +77,7 @@
 
                                                     <li>
 
-                                                        <form action="{{ route('visions.destroy', $Service_vision) }}" method="POST" class="dropdown-item" >
+                                                        <form action="{{ route('Service-vision.destroy', $item) }}" method="POST" class="dropdown-item" >
                                                             @csrf
                                                             @method('DELETE')
 
@@ -96,35 +94,38 @@
                                             <h4>No Data Found!</h4>
                                         @endforelse
 
+
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
                 </div>
 
 
+
+
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header border-bottom p-4">
-            <h5 class="offcanvas-title fs-18 mb-0" id="offcanvasRightLabel">Create vision</h5>
+            <h5 class="offcanvas-title fs-18 mb-0" id="offcanvasRightLabel">Create Service vision</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body p-4">
-            <form  action="{{ route('visions.store') }}" method="POST">
+            <form  action="{{ route('Service-vision.store') }}" method="POST">
                 @csrf
 
-
                     <div class="form-group mb-4">
-                        <label class="label">vision Name</label>
-                        <input type="text" name="name" class="form-control text-dark @error('name') is-invalid @enderror" placeholder="vision Name" value="{{ old('name') }}" required>
+                        <label class="label">Service vision Name</label>
+                        <input type="text" name="name" class="form-control text-dark @error('name') is-invalid @enderror" placeholder="item Name" value="{{ old('name') }}" required>
                     </div>
-                        @error('name')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
+                    @error('name')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                     <div class="form-group d-flex gap-3">
                         <button class="btn btn-primary text-white fw-semibold py-2 px-2 px-sm-3" type="submit">
                             <span class="py-sm-1 d-block">
                                 <i class="ri-add-line text-white"></i>
-                                <span>Create vision</span>
+                                <span>Create Service vision</span>
                             </span>
                         </button>
                     </div>
@@ -133,8 +134,6 @@
         </div>
     </div>
 
-
     <div class="flex-grow-1"></div>
     {{$Service_visions->links()}}
-    @endsection
-
+@endsection

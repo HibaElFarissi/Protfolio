@@ -14,10 +14,10 @@ class Skills extends Model
     protected $fillable = [
         'name',
         'image',
-        'skills_type_id',
+        'skillsType_id',
     ];
 
     public function skillsType(){
-        return $this->belongsTo(Skills_type::class , 'skills_type_id');
+        return $this->belongsTo(Skills_type::class , 'skillsType_id');
     }
 }

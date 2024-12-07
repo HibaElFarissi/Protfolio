@@ -27,8 +27,9 @@ class ArticleController extends Controller
     {
         //
         $Categories=Categorie::all();
-        $Tags=Tag::all();
-        return view('Articles.create',compact('Categories','Tags'));
+        // $Tags=Tag::all();
+        $isUpdate = false;
+        return view('Articles.form',compact('Categories','isUpdate'));
     }
 
     /**
@@ -38,16 +39,17 @@ class ArticleController extends Controller
     {
         //
         $validatedData = $request->validate([
-            'Title_Global'=> 'required',
-            'slug'=> 'required',
-            'text1'=> 'required',
-            'text2'=> 'required',
-            'quote' => 'nullable|min:50',
-            'text3'=> 'required',
-            'image1'=> 'nullable|image|mimes:png,jpg|max:2048',
-            'image2'=> 'nullable|image|mimes:png,jpg|max:2048',
-            'image3'=> 'nullable|image|mimes:png,jpg|max:2048',
-            'Categorie_id'=>'required',
+            'Title_Global'=> 'nullable',
+            'slug'=> 'nullable',
+            'text1'=> 'nullable',
+            'text2'=> 'nullable',
+            'quote' => 'nullable',
+            'text3'=> 'nullable',
+            'image1'=> 'nullable',
+            'image2'=> 'nullable',
+            'image3'=> 'nullable',
+            'Categorie_id'=>'nullable',
+            'user_id' => 'nullable',
         ]);
 
         $validatedData['user_id'] = Auth::id();
@@ -88,8 +90,9 @@ class ArticleController extends Controller
         //
         $Article = Article::findOrFail($id);
         $Categories = Categorie::all();
-        $Tags = Tag::all();
-        return view('Articles.edit', compact('Article','Categories','Tags'));
+        $isUpdate = true;
+        // $Tags = Tag::all();
+        return view('Articles.form', compact('Article','Categories','isUpdate'));
     }
 
     /**
@@ -99,16 +102,16 @@ class ArticleController extends Controller
     {
         //
         $validatedData = $request->validate([
-            'Title_Global'=> 'required',
-            'slug'=> 'required',
-            'text1'=> 'required',
-            'text2'=> 'required',
-            'quote' => 'nullable|min:50',
-            'text3'=> 'required',
-            'image1'=> 'nullable|image|mimes:png,jpg|max:2048',
-            'image2'=> 'nullable|image|mimes:png,jpg|max:2048',
-            'image3'=> 'nullable|image|mimes:png,jpg|max:2048',
-            'Categorie_id'=>'required',
+            'Title_Global'=> 'nullable',
+            'slug'=> 'nullable',
+            'text1'=> 'nullable',
+            'text2'=> 'nullable',
+            'quote' => 'nullable',
+            'text3'=> 'nullable',
+            'image1'=> 'nullable',
+            'image2'=> 'nullable',
+            'image3'=> 'nullable',
+            'Categorie_id'=>'nullable',
         ]);
 
         $validatedData['user_id'] = Auth::id();

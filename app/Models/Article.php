@@ -21,7 +21,8 @@ class Article extends Model
         'image1',
         'image2',
         'image3',
-        'status',
+        'Categorie_id',
+        'user_id',
     ];
 
     public function User(){

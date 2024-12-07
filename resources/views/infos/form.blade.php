@@ -50,11 +50,11 @@
             <label for="formFile" class="form-label">File Upload 1</label>
             <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                 <div class="product-upload">
-                    <label for="file-upload" class="file-upload mb-0">
+                    <label for="file-upload1" class="file-upload mb-0">
                         <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                         <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                     </label>
-                    <input name="image" id="file-upload" type="file">
+                    <input name="image1" id="file-upload1" type="file">
                 </div>
             </div>
 
@@ -68,11 +68,11 @@
             <label for="formFile" class="form-label">File Upload 2</label>
             <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                 <div class="product-upload">
-                    <label for="file-upload" class="file-upload mb-0">
+                    <label for="file-upload2" class="file-upload mb-0">
                         <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                         <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                     </label>
-                    <input name="image" id="file-upload" type="file">
+                    <input name="image2" id="file-upload2" type="file">
                 </div>
             </div>
 

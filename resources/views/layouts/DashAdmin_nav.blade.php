@@ -132,30 +132,13 @@
                     Inbox
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a href="{{ route('Newsletters.index') }}" class="menu-link">
+                    Newsletters
+                    </a>
+                </li>
             </ul>
 
-
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                        <i data-feather="shopping-cart" class="menu-icon tf-icons"></i>
-                        <span class="title">Home</span>
-                    </a>
-                    <ul class="menu-sub">
-
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                            Orders List
-                            </a>
-                        </li>
-
-                        <li class="menu-item">
-                            <a href="#" class="menu-link">
-                            Orders List
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
 
                   {{-- Banner --}}
                   <li class="menu-item">
@@ -186,13 +169,13 @@
                 </a>
                 <ul class="menu-sub">
                     <li class="menu-item">
-                        <a href="{{ route('Article.index') }}" class="menu-link">
+                        <a href="{{ route('Articles.index') }}" class="menu-link">
                         All Articles
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="{{ route('Article.create') }}" class="menu-link">
+                        <a href="{{ route('Articles.create') }}" class="menu-link">
                         Create An Article
                         </a>
                     </li>
@@ -285,6 +268,20 @@
                 </li>
             </ul>
 
+                {{-- Skills-Types--}}
+                <li class="menu-item">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                    <i data-feather="cpu" class="menu-icon tf-icons"></i>
+                    <span class="title">Skills Type</span>
+                </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('Skills-Types.index') }}" class="menu-link">
+                        Type Skills
+                    </a>
+                </li>
+            </ul>
+
 
                 {{-- Categories --}}
                 <li class="menu-item">
@@ -327,13 +324,23 @@
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{ route('Service.index') }}" class="menu-link">
-                        All Services
+                    <a href="{{ route('Service-details.index') }}" class="menu-link">
+                        Show Services
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('Service.create') }}" class="menu-link">
+                    <a href="{{ route('Service-details.create') }}" class="menu-link">
                     Create
+                    </a>
+                </li>
+                {{-- <li class="menu-item">
+                    <a href="{{ route('visions.index') }}" class="menu-link">
+                    Create
+                    </a>
+                </li> --}}
+                <li class="menu-item">
+                    <a href="{{ route('Service-vision.index') }}" class="menu-link">
+                    Service Vision
                     </a>
                 </li>
             </ul>
@@ -360,6 +367,27 @@
                     </a>
                 </li>
             </ul>
+
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                    <i data-feather="shopping-cart" class="menu-icon tf-icons"></i>
+                    <span class="title">Members</span>
+                </a>
+                <ul class="menu-sub">
+
+                    <li class="menu-item">
+                        <a href="{{ route('Members.index') }}" class="menu-link">
+                        All Members
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{{ route('Members.create') }}" class="menu-link">
+                        Create Member
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
 
 

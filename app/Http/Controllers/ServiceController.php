@@ -21,6 +21,10 @@ class ServiceController extends Controller
     public function index(){
         return view('Service.index');
     }
-    
+
+    public function create(){
+        return view('Service.form');
+    }
+
 
 }

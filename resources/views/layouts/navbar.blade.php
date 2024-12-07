@@ -118,17 +118,19 @@
                                 <div class="main-menu">
                                     <nav id="mobile-menu">
                                         <ul class="onepage-menu">
-                                            <li>
+                                            {{-- <li>
                                                 <a href="/">Home</a>
-                                            </li>
+                                            </li> --}}
                                             <li>
-                                                <a href="/About">About</a>
+                                                <a href="{{ route('About') }}">About</a>
                                             </li>
-                                            <li><a href="/Service">Services</a>
+                                            <li><a href="{{ route('Our-services') }}">Services</a>
                                             </li>
-                                            <li><a href="/Projects">Protolio</a>
+                                            <li><a href="{{ route('Projects') }}">Protolio</a>
                                             </li>
-                                            <li><a href="/Blog">Blog</a>
+                                            <li><a href="{{ route('Blog') }}">Blog</a>
+                                            </li>
+                                            <li><a href="{{ route('Designs') }}">Designs</a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -149,8 +151,8 @@
                                     class="header__btn-wrap d-none d-sm-inline-flex d-inline-flex align-items-center gap-5">
                                     <a class="bd-btn is-btn-anim bordered-blue" href="{{ route('download.cv') }}">
                                         <span class="bd-btn-inner">
-                                            <span class="bd-btn-normal">Dowland CV</span>
-                                            <span class="bd-btn-hover">Dowland CV</span>
+                                            <span class="bd-btn-normal">DOWLAND CV</span>
+                                            <span class="bd-btn-hover">DOWLAND CV</span>
                                             <i class="contentHidden"></i>
                                         </span>
                                     </a>
@@ -289,7 +291,7 @@
                     <!-- Subscribe Form -->
                     <div class="footer__widget-content">
                         <p>Subscribe to get the latest news from me</p>
-                    <form action="{{ route('send.email') }}"  method="POST" class="form-subcriber d-flex wow fadeIn animated">
+                    <form action="{{ route('Newsletters.store') }}"  method="POST" class="form-subcriber d-flex wow fadeIn animated">
                         @csrf
                             <div class="footer__input">
                                 <input type="text" placeholder="Enter your mail" name="email">

@@ -53,7 +53,6 @@
     <!-- Offcanvas area end-->
 
 
-    <!-- Body main wrapper start -->
     <main>
 
         <!-- breadcrumb area  start -->
@@ -65,14 +64,14 @@
                     <div class="col-xxl-7 col-xl-7 col-lg-8">
                         <div class="breadcrumb__content-wrapper p-relative z-index-1 text-center">
                             <div class="breadcrumb__title-wrapperr">
-                                <h1 class="breadcrumb__title mb-25">Blog Standard</h1>
+                                <h1 class="breadcrumb__title mb-25">My Blog</h1>
                             </div>
                             <div class="breadcrumb__menu">
                                 <nav>
                                     <ul>
-                                        <li><span><a href="index.html">Home</a></span></li>
-                                        <li><span><a href="blog.html">Blog</a></span></li>
-                                        <li><span>Blog Standard</span></li>
+                                        <li><span><a href="">Home</a></span></li>
+                                        <li><span><a href="">My Blog</a></span></li>
+
                                     </ul>
                                 </nav>
                             </div>
@@ -83,329 +82,330 @@
         </section>
         <!-- breadcrumb area  end -->
 
-        <!-- postbox area start -->
-        <section class="postbox__area section-space">
+        <!-- blog area start -->
+        <div class="bd-blog__area section-space">
             <div class="container">
-                <div class="row">
-                    <div class="col-xxl-8 col-lg-8">
-                        <div class="postbox__wrapper">
-                            <article class="postbox__item">
-                                <div class="postbox__thumb">
-                                    <a href="#">
-                                        <img src="assets/imgs/blog/post/blog-post-01.png" alt="image not found">
-                                    </a>
-                                </div>
-                                <div class="postbox__content theme-bg-secondary">
-                                    <div class="postbox__meta">
-                                        <span>
-                                            <i class="fa-light fa-user"></i>
-                                            Allex Berly
-                                        </span>
-                                        <span>
-                                            <i class="fa-light fa-calendar"></i>
-                                            Nov 12, 2023
-                                        </span>
-                                        <span>
-                                            <i class="fa-light fa-comment"></i>
-                                            10 Comments
-                                        </span>
-                                    </div>
-                                    <h4 class="postbox__title">
-                                        <a href="blog-details.html">How to Design Your Project Faster and More
-                                            Efficiently</a>
-                                    </h4>
-                                    <div class="postbox__text">
-                                        <p>Some mistakenly believe that because you’re offering a certification it must
-                                            be generalized and meant to give anyone a wide range of digital skills. But
-                                            the benefits of continuous This is also a flexible form of learning. You may
-                                            have a suite of microlearning courses. employees who feel that their skills
-                                            are not being put to good use in their current job Choose which ones are
-                                            important for any specific role within your company. </p>
-                                    </div>
-                                    <div class="postbox__btn">
-                                        <a class="bd-btn is-btn-anim" href="blog-details.html">
-                                            <span class="bd-btn-inner">
-                                                <span class="bd-btn-normal">Know more</span>
-                                                <span class="bd-btn-hover">Know more</span>
-                                                <i class="contentHidden"></i>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="postbox__item">
-                                <div class="postbox__thumb postbox__video p-relative">
-                                    <a href="blog-details.html">
-                                        <img src="assets/imgs/blog/post/blog-post-02.png" alt="image not found">
-                                    </a>
-                                    <a href="https://youtu.be/-WRZI63emjs" class="play-btn pulse-btn popup-video"><i
-                                            class="fas fa-play"></i></a>
-                                </div>
-                                <div class="postbox__content theme-bg-secondary">
-                                    <div class="postbox__meta">
-                                        <span>
-                                            <i class="fa-light fa-user"></i>
-                                            Nayeem
-                                        </span>
-                                        <span>
-                                            <i class="fa-light fa-calendar"></i>
-                                            Nov 12, 2023
-                                        </span>
-                                        <span>
-                                            <i class="fa-light fa-comment"></i>
-                                            10 Comments
-                                        </span>
-                                    </div>
-                                    <h4 class="postbox__title">
-                                        <a href="blog-details.html">Easiest Way To Manage Project Employee And Others
-                                            Work</a>
-                                    </h4>
-                                    <div class="postbox__text">
-                                        <p>Investing in offering those paths early on can help you retain staff instead
-                                            of letting them go. After all, this is the era of hybrid and remote working
-                                            so flexibility and career advancement. employees who feel that their skills
-                                            are not being put to good use in their current job </p>
-                                    </div>
-                                    <div class="postbox__btn">
-                                        <a class="bd-btn is-btn-anim" href="blog-details.html">
-                                            <span class="bd-btn-inner">
-                                                <span class="bd-btn-normal">Know more</span>
-                                                <span class="bd-btn-hover">Know more</span>
-                                                <i class="contentHidden"></i>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="postbox__item">
-                                <div class="postbox__quote theme-bg-secondary">
-                                    <div class="postbox__quote-thumb">
-                                        <img src="assets/imgs/shape/postbox-quote.png" alt="image not found">
-                                    </div>
-                                    <div class="postbox__quote-content">
-                                        <span>Motivational Quote</span>
-                                        <h5>“You have to be burning with an idea, or a problem, or a wrong that you want
-                                            to right. If you’re not passion enough from the start,never stick it out.” .
-                                        </h5>
-                                        <cite>Steve Jobs</cite>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="postbox__item">
-                                <div class="postbox__slider swiper p-relative">
-                                    <div class="swiper-wrapper">
-                                        <div class="postbox__slider-item swiper-slide">
-                                            <img src="assets/imgs/blog/post/slider/postblog-slider-01.png"
-                                                alt="image not found">
-                                        </div>
-                                        <div class="postbox__slider-item swiper-slide">
-                                            <img src="assets/imgs/blog/post/slider/postblog-slider-02.png"
-                                                alt="image not found">
-                                        </div>
-                                        <div class="postbox__slider-item swiper-slide">
-                                            <img src="assets/imgs/blog/post/slider/postblog-slider-03.png"
-                                                alt="image not found">
-                                        </div>
-                                    </div>
-                                    <!-- If we need navigation buttons -->
-                                    <div class="postbox__navigation">
-                                        <button class="postbox__button-prev circle-btn slider__nav-btn"><i
-                                                class="fa-regular fa-arrow-left-long"></i></button>
-                                        <button class="postbox__button-next circle-btn ml-5 slider__nav-btn"><i
-                                                class="fa-regular fa-arrow-right-long"></i></button>
-                                    </div>
-                                </div>
-                                <div class="postbox__content theme-bg-secondary">
-                                    <div class="postbox__meta">
-                                        <span>
-                                            <i class="fa-light fa-user"></i>
-                                            Allex Berly
-                                        </span>
-                                        <span>
-                                            <i class="fa-light fa-calendar"></i>
-                                            Nov 12, 2023
-                                        </span>
-                                        <span>
-                                            <i class="fa-light fa-comment"></i>
-                                            10 Comments
-                                        </span>
-                                    </div>
-                                    <h4 class="postbox__title">
-                                        <a href="blog-details.html">How to Design Your Project Faster and More
-                                            Efficiently</a>
-                                    </h4>
-                                    <div class="postbox__text">
-                                        <p>Some of the employees in your workforce are already digitally-savvy and
-                                            actively pursue new training and in-demand skills on their own. These
-                                            employees are valuable, but research demonstrates that you may lose them if
-                                            you don’t allow them the opportunity to improve their skills further. Should
-                                            be possible as long as the training is available to upskill employees in the
-                                            required skills. </p>
-                                    </div>
-                                    <div class="postbox__btn">
-                                        <a class="bd-btn is-btn-anim" href="blog-details.html">
-                                            <span class="bd-btn-inner">
-                                                <span class="bd-btn-normal">Know more</span>
-                                                <span class="bd-btn-hover">Know more</span>
-                                                <i class="contentHidden"></i>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10">
+                        <div class="section__title-wrapper text-center section__title-space">
+                            <span class="section__subtitle bg-field">MY BLOG</span>
+                            <h2 class="section__title">Read My Latest Article</h2>
+                            <p class="contentHidden">contentHidden</p>
                         </div>
                     </div>
-                    <div class="col-xxl4 col-lg-4">
-                        <div class="sidebar__wrapper">
-                            <div class="sidebar__widget">
-                                <h5 class=" sidebar__widget-title">Search Here</h5>
-                                <div class="sidebar__widget-content">
-                                    <div class="sidebar__search">
-                                        <form action="#">
-                                            <div class="sidebar__search-input">
-                                                <input type="text" placeholder="Enter your keywords...">
-                                                <button type="submit">
-                                                    <i class="fa-sharp fa-light fa-magnifying-glass"></i>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
+                </div>
+                <div class="row g-5 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="blog__wrap blog__item style-five">
+                            <div class="blog__thumb is-hover">
+                                <a href="">
+                                    <img src="assets/imgs/blog/blog-12.png" alt="image not found">
+                                </a>
+                                <div class="blog__tag">
+                                    <a href="#">Development</a>
                                 </div>
                             </div>
-                            <div class="sidebar__widget is-padding-none">
-                                <div class="sidebar__widget-content">
-                                    <div class="sidebar__author">
-                                        <div class="sidebar__author-thumb">
-                                            <img src="assets/imgs/user/user-07.png" alt="image not found">
-                                        </div>
-                                        <div class="sidebar__author-content">
-                                            <h6 class=" sidebar__author-title">Colene Landin</h6>
-                                            <p>Lorem ipsum dolor ametare elit consectetur adipiscing Aenean
-                                                pellentesque.</p>
-                                            <div class="sidebar__author-social">
-                                                <div class="theme__social">
-                                                    <a href="#"><i class="fa-brands fa-facebook-f"></i>
-                                                    </a>
-                                                    <a href="#"><i class="icon-twiter"></i>
-                                                    </a>
-                                                    <a href="#"><i class="fa-brands fa-linkedin"></i>
-                                                    </a>
-                                                    <a href="#"><i class="fa-brands fa-behance"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="blog__content bg-solid">
+                                <div class="blog__meta">
+                                    <span>
+                                        <i class="fa-light fa-calendar"></i>
+                                        Nov 12, 2023
+                                    </span>
+                                    <span>
+                                        <i class="fa-light fa-comment"></i>
+                                        10 Comments
+                                    </span>
+                                </div>
+                                <h5 class="blog__title"><a href="#">The Role of actions in User
+                                        Engagement</a></h5>
+                                <div class="blog__btn">
+                                    <a class="bd-btn bordered-light is-btn-anim" href="#">
+                                        <span class="bd-btn-inner">
+                                            <span class="bd-btn-normal">Read More</span>
+                                            <span class="bd-btn-hover">Read More</span>
+                                            <i class="contentHidden"></i>
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="sidebar__widget">
-                                <h5 class=" sidebar__widget-title">Categories</h5>
-                                <div class="sidebar__widget-content">
-                                    <ul>
-                                        <li><a href="blog.html">Web Design<span>26</span></a></li>
-                                        <li><a href="blog.html">Devlopment <span>30</span></a></li>
-                                        <li><a href="blog.html">Branding <span>71</span></a></li>
-                                        <li><a href="blog.html">Motion Design <span>56</span></a></li>
-                                        <li><a href="blog.html">UI/UX Deisgn <span>60</span></a></li>
-                                        <li><a href="blog.html">Graphic Design <span>99</span></a></li>
-                                    </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="blog__wrap blog__item style-five">
+                            <div class="blog__thumb is-hover">
+                                <a href="#">
+                                    <img src="assets/imgs/blog/blog-13.png" alt="image not found">
+                                </a>
+                                <div class="blog__tag">
+                                    <a href="#">Project</a>
                                 </div>
                             </div>
-                            <div class="sidebar__widget">
-                                <h5 class="sidebar__widget-title">Pages</h5>
-                                <div class="sidebar__widget-content">
-                                    <ul>
-                                        <li><a href="blog.html">Web Design <span><i
-                                                        class="fa-regular fa-angle-right"></i></span></a></li>
-                                        <li><a href="blog.html">Devlopment <span><i
-                                                        class="fa-regular fa-angle-right"></i></span></a></li>
-                                        <li><a href="blog.html">Branding <span><i
-                                                        class="fa-regular fa-angle-right"></i></span></a></li>
-                                        <li><a href="blog.html">Motion Design<span><i
-                                                        class="fa-regular fa-angle-right"></i></span></a></li>
-                                        <li><a href="blog.html">UI/UX Deisgn <span><i
-                                                        class="fa-regular fa-angle-right"></i></span></a></li>
-                                        <li><a href="blog.html">Graphic Design <span><i
-                                                        class="fa-regular fa-angle-right"></i></span></a></li>
-                                    </ul>
+                            <div class="blog__content bg-solid">
+                                <div class="blog__meta">
+                                    <span>
+                                        <i class="fa-light fa-calendar"></i>
+                                        Mar 20, 2023
+                                    </span>
+                                    <span>
+                                        <i class="fa-light fa-comment"></i>
+                                        20 Comments
+                                    </span>
+                                </div>
+                                <h5 class="blog__title"><a href="#">Talent Acquisition and Global Work
+                                        Force</a></h5>
+                                <div class="blog__btn">
+                                    <a class="bd-btn bordered-light is-btn-anim" href="#">
+                                        <span class="bd-btn-inner">
+                                            <span class="bd-btn-normal">Read More</span>
+                                            <span class="bd-btn-hover">Read More</span>
+                                            <i class="contentHidden"></i>
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="sidebar__widget">
-                                <h5 class=" sidebar__widget-title">Recent Post</h5>
-                                <div class="sidebar__widget-content">
-                                    <div class="sidebar__post">
-                                        <div class="rc__post">
-                                            <div class="rc__post-thumb">
-                                                <a href="blog-details.html"><img
-                                                        src="assets/imgs/blog/post/sidebar/sidebar-post-blog-01.png"
-                                                        alt="image not found"></a>
-                                            </div>
-                                            <div class="rc__post-content">
-                                                <h6 class="rc__post-title">
-                                                    <a href="blog-details.html">Prepare for the Future of and idea</a>
-                                                </h6>
-                                                <div class="rc__meta">
-                                                    <span>
-                                                        <i class="fa-sharp fa-light fa-clock"></i>
-                                                        June 22, 2020
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="rc__post">
-                                            <div class="rc__post-thumb">
-                                                <a href="blog-details.html"><img
-                                                        src="assets/imgs/blog/post/sidebar/sidebar-post-blog-02.png"
-                                                        alt="image not found"></a>
-                                            </div>
-                                            <div class="rc__post-content">
-                                                <h6 class="rc__post-title">
-                                                    <a href="blog-details.html">Developing privacy user centric apps</a>
-                                                </h6>
-                                                <div class="rc__meta">
-                                                    <span>
-                                                        <i class="fa-sharp fa-light fa-clock"></i>
-                                                        March 15, 2023
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="rc__post">
-                                            <div class="rc__post-thumb">
-                                                <a href="blog-details.html"><img
-                                                        src="assets/imgs/blog/post/sidebar/sidebar-post-blog-03.png"
-                                                        alt="image not found"></a>
-                                            </div>
-                                            <div class="rc__post-content">
-                                                <h6 class="rc__post-title">
-                                                    <a href="blog-details.html">Starting and Growing Design</a>
-                                                </h6>
-                                                <div class="rc__meta">
-                                                    <span>
-                                                        <i class="fa-sharp fa-light fa-clock"></i>
-                                                        July 22, 2021
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="blog__wrap blog__item style-five">
+                            <div class="blog__thumb is-hover">
+                                <a href="#">
+                                    <img src="assets/imgs/blog/blog-14.png" alt="image not found">
+                                </a>
+                                <div class="blog__tag">
+                                    <a href="#">Agency</a>
                                 </div>
                             </div>
-                            <div class="sidebar__widget">
-                                <h5 class=" sidebar__widget-title">Tags</h5>
-                                <div class="sidebar__widget-content">
-                                    <div class="sidebar__widget-tag">
-                                        <div class="tagcloud">
-                                            <a href="#">Techology</a>
-                                            <a href="#">Food</a>
-                                            <a href="#">Personality</a>
-                                            <a href="#">Agency</a>
-                                            <a href="#">Life Style</a>
-                                            <a href="#">Travel</a>
-                                            <a href="#">Nature</a>
-                                            <a href="#">Development</a>
-                                        </div>
-                                    </div>
+                            <div class="blog__content bg-solid">
+                                <div class="blog__meta">
+                                    <span>
+                                        <i class="fa-light fa-calendar"></i>
+                                        May 10, 2023
+                                    </span>
+                                    <span>
+                                        <i class="fa-light fa-comment"></i>
+                                        05 Comments
+                                    </span>
+                                </div>
+                                <h5 class="blog__title"><a href="blog-details.html">Work and Company Culture Program</a>
+                                </h5>
+                                <div class="blog__btn">
+                                    <a class="bd-btn bordered-light is-btn-anim" href="blog-details.html">
+                                        <span class="bd-btn-inner">
+                                            <span class="bd-btn-normal">Read More</span>
+                                            <span class="bd-btn-hover">Read More</span>
+                                            <i class="contentHidden"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="blog__wrap blog__item style-five">
+                            <div class="blog__thumb is-hover">
+                                <a href="#">
+                                    <img src="assets/imgs/blog/blog-23.png" alt="image not found">
+                                </a>
+                                <div class="blog__tag">
+                                    <a href="#">Agency</a>
+                                </div>
+                            </div>
+                            <div class="blog__content bg-solid">
+                                <div class="blog__meta">
+                                    <span>
+                                        <i class="fa-light fa-calendar"></i>
+                                        May 10, 2023
+                                    </span>
+                                    <span>
+                                        <i class="fa-light fa-comment"></i>
+                                        05 Comments
+                                    </span>
+                                </div>
+                                <h5 class="blog__title"><a href="#">Clearly outline the purpose of your
+                                        goal</a></h5>
+                                <div class="blog__btn">
+                                    <a class="bd-btn bordered-light is-btn-anim" href="#">
+                                        <span class="bd-btn-inner">
+                                            <span class="bd-btn-normal">Read More</span>
+                                            <span class="bd-btn-hover">Read More</span>
+                                            <i class="contentHidden"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="blog__wrap blog__item style-five">
+                            <div class="blog__thumb is-hover">
+                                <a href="#">
+                                    <img src="assets/imgs/blog/blog-24.png" alt="image not found">
+                                </a>
+                                <div class="blog__tag">
+                                    <a href="#">Agency</a>
+                                </div>
+                            </div>
+                            <div class="blog__content bg-solid">
+                                <div class="blog__meta">
+                                    <span>
+                                        <i class="fa-light fa-calendar"></i>
+                                        May 10, 2023
+                                    </span>
+                                    <span>
+                                        <i class="fa-light fa-comment"></i>
+                                        05 Comments
+                                    </span>
+                                </div>
+                                <h5 class="blog__title"><a href="#">Select a memorable and relevant
+                                        domain</a></h5>
+                                <div class="blog__btn">
+                                    <a class="bd-btn bordered-light is-btn-anim" href="#">
+                                        <span class="bd-btn-inner">
+                                            <span class="bd-btn-normal">Read More</span>
+                                            <span class="bd-btn-hover">Read More</span>
+                                            <i class="contentHidden"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="blog__wrap blog__item style-five">
+                            <div class="blog__thumb is-hover">
+                                <a href="#">
+                                    <img src="assets/imgs/blog/blog-25.png" alt="image not found">
+                                </a>
+                                <div class="blog__tag">
+                                    <a href="#">Agency</a>
+                                </div>
+                            </div>
+                            <div class="blog__content bg-solid">
+                                <div class="blog__meta">
+                                    <span>
+                                        <i class="fa-light fa-calendar"></i>
+                                        May 10, 2023
+                                    </span>
+                                    <span>
+                                        <i class="fa-light fa-comment"></i>
+                                        05 Comments
+                                    </span>
+                                </div>
+                                <h5 class="blog__title"><a href="#">Choose a website building platform
+                                        works</a></h5>
+                                <div class="blog__btn">
+                                    <a class="bd-btn bordered-light is-btn-anim" href="#">
+                                        <span class="bd-btn-inner">
+                                            <span class="bd-btn-normal">Read More</span>
+                                            <span class="bd-btn-hover">Read More</span>
+                                            <i class="contentHidden"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="blog__wrap blog__item style-five">
+                            <div class="blog__thumb is-hover">
+                                <a href="#">
+                                    <img src="assets/imgs/blog/blog-26.png" alt="image not found">
+                                </a>
+                                <div class="blog__tag">
+                                    <a href="#">Agency</a>
+                                </div>
+                            </div>
+                            <div class="blog__content bg-solid">
+                                <div class="blog__meta">
+                                    <span>
+                                        <i class="fa-light fa-calendar"></i>
+                                        May 10, 2023
+                                    </span>
+                                    <span>
+                                        <i class="fa-light fa-comment"></i>
+                                        05 Comments
+                                    </span>
+                                </div>
+                                <h5 class="blog__title"><a href="#">Personalize the template by
+                                        customizing colors</a></h5>
+                                <div class="blog__btn">
+                                    <a class="bd-btn bordered-light is-btn-anim" href="#">
+                                        <span class="bd-btn-inner">
+                                            <span class="bd-btn-normal">Read More</span>
+                                            <span class="bd-btn-hover">Read More</span>
+                                            <i class="contentHidden"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="blog__wrap blog__item style-five">
+                            <div class="blog__thumb is-hover">
+                                <a href="#">
+                                    <img src="assets/imgs/blog/blog-27.png" alt="image not found">
+                                </a>
+                                <div class="blog__tag">
+                                    <a href="#">Agency</a>
+                                </div>
+                            </div>
+                            <div class="blog__content bg-solid">
+                                <div class="blog__meta">
+                                    <span>
+                                        <i class="fa-light fa-calendar"></i>
+                                        May 10, 2023
+                                    </span>
+                                    <span>
+                                        <i class="fa-light fa-comment"></i>
+                                        05 Comments
+                                    </span>
+                                </div>
+                                <h5 class="blog__title"><a href="blog">Work and Company Culture Program</a>
+                                </h5>
+                                <div class="blog__btn">
+                                    <a class="bd-btn bordered-light is-btn-anim" href="#">
+                                        <span class="bd-btn-inner">
+                                            <span class="bd-btn-normal">Read More</span>
+                                            <span class="bd-btn-hover">Read More</span>
+                                            <i class="contentHidden"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="blog__wrap blog__item style-five">
+                            <div class="blog__thumb is-hover">
+                                <a href="#">
+                                    <img src="assets/imgs/blog/blog-28.png" alt="image not found">
+                                </a>
+                                <div class="blog__tag">
+                                    <a href="#">Agency</a>
+                                </div>
+                            </div>
+                            <div class="blog__content bg-solid">
+                                <div class="blog__meta">
+                                    <span>
+                                        <i class="fa-light fa-calendar"></i>
+                                        May 10, 2023
+                                    </span>
+                                    <span>
+                                        <i class="fa-light fa-comment"></i>
+                                        05 Comments
+                                    </span>
+                                </div>
+                                <h5 class="blog__title"><a href="">include a brief info about yourself
+                                        and others</a></h5>
+                                <div class="blog__btn">
+                                    <a class="bd-btn bordered-light is-btn-anim" href="#">
+                                        <span class="bd-btn-inner">
+                                            <span class="bd-btn-normal">Read More</span>
+                                            <span class="bd-btn-hover">Read More</span>
+                                            <i class="contentHidden"></i>
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -439,7 +439,10 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- postbox area end -->
+        </div>
+        <!-- blog area end -->
+
+    </main>
+    <!-- Body main wrapper end -->
 
 @endsection

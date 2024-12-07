@@ -37,7 +37,7 @@ class infosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // before u send that request make sure and verfy all these values below
         $validatedData = $request->validate([
             'name' => 'required',
             'job' => 'required',
@@ -64,8 +64,8 @@ class infosController extends Controller
         }
 
 
+        // Insert into
         info::create($validatedData);
-
         Alert::success('succes', 'Information has been added successfully');
         return to_route('infos.index');
     }
@@ -83,7 +83,7 @@ class infosController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // rj3 données 9dim & afficher fwahed page
         $info = info::findOrFail($id);
         $isUpdate = true;
         return view('infos.form', compact('isUpdate','info'));
@@ -92,7 +92,7 @@ class infosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, info $infos)
+    public function update(Request $request, info $info)
     {
         //
         $validatedData = $request->validate([
@@ -121,7 +121,7 @@ class infosController extends Controller
             $validatedData['image2'] = $image2;
         }
 
-        $infos->update($validatedData);
+        $info->update($validatedData);
 
 
         Alert::success('succes', 'The informaion has been updated successfully');

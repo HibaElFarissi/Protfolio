@@ -75,7 +75,7 @@
                 <ul class="dropdown-menu dropdown-menu-end bg-white border box-shadow">
 
                 <li>
-                <a class="dropdown-item" href="{{ route('Experiences.edit', $Experiences) }}">
+                <a class="dropdown-item" href="{{ route('Experiences.edit', $item) }}">
                 <i data-feather="edit-3"></i>
                     Rename
                 </a>
@@ -84,7 +84,7 @@
 
 
                 <li>
-                <form class="dropdown-item"  action="{{ route('Experiences.destroy', $Experiences) }}" method="POST">
+                <form class="dropdown-item"  action="{{ route('Experiences.destroy', $item) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <i data-feather="trash-2"></i>

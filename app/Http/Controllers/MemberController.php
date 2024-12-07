@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Member;
 
 class MemberController extends Controller
 {
@@ -12,6 +13,8 @@ class MemberController extends Controller
     public function index()
     {
         //
+        $Members=Member::all();
+        return view('Members.index' , compact('Members'));
     }
 
     /**
@@ -20,6 +23,9 @@ class MemberController extends Controller
     public function create()
     {
         //
+        $Member= new Member(); // Arréter 3amaliya old ($member)
+        $isUpdate = false;
+        return view('Members.form', compact('isUpdate', 'Member'));
     }
 
     /**
@@ -28,7 +34,24 @@ class MemberController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+
+            'name' =>'required| max:255',
+            'work' =>'required|max:255',
+            'photo' =>'nullable|image|max:2048',
+            'Linkedin' =>'required',
+            'Github' =>'required',
+        ]);
+
+        if($request->hasFile('photo')){
+            $photoPath = $request->file('photo')->store('Members','public');
+            $validatedData['photo']=$photoPath;
+        }
+
+        Member::create($validatedData);
+        return redirect()->route('Members.index');
     }
+
 
     /**
      * Display the specified resource.
@@ -36,6 +59,8 @@ class MemberController extends Controller
     public function show(string $id)
     {
         //
+        $Member = Member::findOrFail($id);
+        return view('Members.show', compact('Member'));
     }
 
     /**
@@ -44,6 +69,9 @@ class MemberController extends Controller
     public function edit(string $id)
     {
         //
+        $Member = Member::findOrFail($id);
+        $isUpdate = true;
+        return view('Members.form', compact('Member', 'isUpdate'));
     }
 
     /**
@@ -52,6 +80,22 @@ class MemberController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $validatedData=$request->validate([
+            'name' =>'required|max:255',
+            'work' =>'required|max:255',
+            'photo' =>'nullable|image|max:2048',
+            'Linkedin' =>'required',
+            'Github' =>'required',
+        ]);
+
+        $Member=Member::findOrFail($id);
+        if($request->hasFile('photo')){
+            $photoPath = $request->file('photo')->store('Members','public');
+            $validatedData['photo']=$photoPath;
+        }
+
+        $Member->update($validatedData);
+        return to_route('Members.index');
     }
 
     /**
@@ -60,5 +104,7 @@ class MemberController extends Controller
     public function destroy(string $id)
     {
         //
+        Member::findOrFail($id)->delete();
+        return to_route('Members.index');
     }
 }

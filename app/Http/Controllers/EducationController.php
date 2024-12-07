@@ -23,9 +23,9 @@ class EducationController extends Controller
     public function create()
     {
         //
-        $Educations = new Education();
+        $Education = new Education();
         $isUpdate = false;
-        return view('Educations.form', compact('Educations' , 'isUpdate'));
+        return view('Educations.form', compact('Education' , 'isUpdate'));
     }
 
     /**
@@ -62,7 +62,8 @@ class EducationController extends Controller
     {
         //
         $Education = Education::findOrFail($id);
-        return view('Educations.edit', compact('Education'));
+        $isUpdate = true;
+        return view('Educations.form', compact('isUpdate','Education'));
     }
 
     /**

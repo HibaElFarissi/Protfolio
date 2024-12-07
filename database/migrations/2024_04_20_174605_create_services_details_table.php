@@ -20,6 +20,8 @@ return new class extends Migration
             $table->text('description');
             $table->string('image')->nullable();
             $table->string('slug');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

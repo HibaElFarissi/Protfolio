@@ -28,11 +28,11 @@
                 <label for="formFile" class="form-label">Banner_About:</label>
                 <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                     <div class="product-upload">
-                        <label for="file-upload" class="file-upload mb-0">
+                        <label for="file-upload1" class="file-upload mb-0">
                             <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                             <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                         </label>
-                        <input name="bannerAbout" id="file-upload" type="file" value="{{ old('bannerAbout', $banner->bannerAbout) }}">
+                        <input name="bannerAbout" id="file-upload1" type="file" value="{{ old('bannerAbout', $banner->bannerAbout) }}">
                     </div>
                 </div>
 
@@ -48,11 +48,11 @@
                 <label for="formFile" class="form-label">Banner_Client:</label>
                 <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                     <div class="product-upload">
-                        <label for="file-upload" class="file-upload mb-0">
+                        <label for="file-upload2" class="file-upload mb-0">
                             <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                             <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                         </label>
-                        <input name="bannerClient" id="file-upload" type="file" value="{{ old('bannerClient', $banner->bannerClient) }}">
+                        <input name="bannerClient" id="file-upload2" type="file" value="{{ old('bannerClient', $banner->bannerClient) }}">
                     </div>
                 </div>
 
@@ -69,11 +69,11 @@
                 <label for="formFile" class="form-label">Banner_Testimonials:</label>
                 <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                     <div class="product-upload">
-                        <label for="file-upload" class="file-upload mb-0">
+                        <label for="file-upload3" class="file-upload mb-0">
                             <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                             <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                         </label>
-                        <input name="bannerTestimonials" id="file-upload" type="file" value="{{ old('bannerTestimonials', $banner->bannerTestimonials) }}">
+                        <input name="bannerTestimonials" id="file-upload3" type="file" value="{{ old('bannerTestimonials', $banner->bannerTestimonials) }}">
                     </div>
                 </div>
 
@@ -89,11 +89,11 @@
                 <label for="formFile" class="form-label">Banner_Service:</label>
                 <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                     <div class="product-upload">
-                        <label for="file-upload" class="file-upload mb-0">
+                        <label for="file-upload4" class="file-upload mb-0">
                             <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                             <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                         </label>
-                        <input name="bannerService" id="file-upload" type="file" value="{{ old('bannerService', $banner->bannerService) }}">
+                        <input name="bannerService" id="file-upload4" type="file" value="{{ old('bannerService', $banner->bannerService) }}">
                     </div>
                 </div>
 
@@ -109,11 +109,11 @@
                 <label for="formFile" class="form-label">Banner_Service_Detail:</label>
                 <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                     <div class="product-upload">
-                        <label for="file-upload" class="file-upload mb-0">
+                        <label for="file-upload5" class="file-upload mb-0">
                             <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                             <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                         </label>
-                        <input name="bannerServiceDetail" id="file-upload" type="file" value="{{ old('bannerServiceDetail', $banner->bannerServiceDetail) }}">
+                        <input name="bannerServiceDetail" id="file-upload5" type="file" value="{{ old('bannerServiceDetail', $banner->bannerServiceDetail) }}">
                     </div>
                 </div>
 
@@ -131,11 +131,11 @@
                 <label for="formFile" class="form-label">Banner_Project:</label>
                 <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                     <div class="product-upload">
-                        <label for="file-upload" class="file-upload mb-0">
+                        <label for="file-upload6" class="file-upload mb-0">
                             <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                             <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                         </label>
-                        <input name="bannerProject" id="file-upload" type="file" value="{{ old('bannerProject', $banner->bannerProject) }}">
+                        <input name="bannerProject" id="file-upload6" type="file" value="{{ old('bannerProject', $banner->bannerProject) }}">
                     </div>
                 </div>
 
@@ -152,11 +152,11 @@
                 <label for="formFile" class="form-label">Banner_Blog:</label>
                 <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                     <div class="product-upload">
-                        <label for="file-upload" class="file-upload mb-0">
+                        <label for="file-upload7" class="file-upload mb-0">
                             <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                             <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                         </label>
-                        <input name="bannerBlog" id="file-upload" type="file" value="{{ old('bannerBlog', $banner->bannerBlog) }}">
+                        <input name="bannerBlog" id="file-upload7" type="file" value="{{ old('bannerBlog', $banner->bannerBlog) }}">
                     </div>
                 </div>
 
@@ -172,11 +172,11 @@
                 <label for="formFile" class="form-label">Banner_Blog_Detail:</label>
                 <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                     <div class="product-upload">
-                        <label for="file-upload" class="file-upload mb-0">
+                        <label for="file-upload8" class="file-upload mb-0">
                             <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                             <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                         </label>
-                        <input name="bannerBlogDetail" id="file-upload" type="file" value="{{ old('bannerBlogDetail', $banner->bannerBlogDetail) }}">
+                        <input name="bannerBlogDetail" id="file-upload8" type="file" value="{{ old('bannerBlogDetail', $banner->bannerBlogDetail) }}">
                     </div>
                 </div>
 
@@ -193,11 +193,11 @@
                 <label for="formFile" class="form-label">Banner_Contact:</label>
                 <div class="form-control h-100 text-center position-relative p-4 p-lg-5">
                     <div class="product-upload">
-                        <label for="file-upload" class="file-upload mb-0">
+                        <label for="file-upload9" class="file-upload mb-0">
                             <i class="ri-upload-cloud-2-line fs-2 text-gray-light"></i>
                             <span class="d-block fw-semibold text-body">Drop files here or click to upload.</span>
                         </label>
-                        <input name="bannerContact" id="file-upload" type="file" value="{{ old('bannerContact', $banner->bannerContact) }}">
+                        <input name="bannerContact" id="file-upload9" type="file" value="{{ old('bannerContact', $banner->bannerContact) }}">
                     </div>
                 </div>
 

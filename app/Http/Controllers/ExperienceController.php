@@ -23,9 +23,9 @@ class ExperienceController extends Controller
     public function create()
     {
         //
-        $Experiences = new Experience();
+        $Experience = new Experience();
         $isUpdate = false;
-        return view('Experiences.form', compact('Experiences', 'isUpdate'));
+        return view('Experiences.form', compact('Experience', 'isUpdate'));
     }
 
     /**
@@ -95,6 +95,6 @@ class ExperienceController extends Controller
     {
         //
         Experience::findOrfail($id)->delete();
-        return to_route('Educations.index');
+        return to_route('Experiences.index');
     }
 }

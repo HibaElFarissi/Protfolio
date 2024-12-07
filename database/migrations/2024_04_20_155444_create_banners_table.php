@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->string('bannerContact');
-            $table->string('bannerAbout');
-            $table->string('bannerClient');
-            $table->string('bannerTestimonials');
-            $table->string('bannerService');
-            $table->string('bannerServiceDetail');
-            $table->string('bannerProject');
-            $table->string('bannerBlog');
-            $table->string('bannerBlogDetail');
+            $table->longText('bannerContact')->nullable();
+            $table->longText('bannerAbout')->nullable();
+            $table->longText('bannerClient')->nullable();
+            $table->longText('bannerTestimonials')->nullable();
+            $table->longText('bannerService')->nullable();
+            $table->longText('bannerServiceDetail')->nullable();
+            $table->longText('bannerProject')->nullable();
+            $table->longText('bannerBlog')->nullable();
+            $table->longText('bannerBlogDetail')->nullable();
             $table->timestamps();
         });
     }

@@ -1193,5 +1193,7 @@
             </div>
         </div>
         <!-- Contact area end -->
+        <script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
+        <div class="commonninja_component pid-bc9b3985-3340-48ef-bb3b-7e5f705dd8e5"></div>
 
 @endsection

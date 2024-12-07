@@ -141,7 +141,7 @@
 
                 <ul class="dropdown-menu dropdown-menu-end bg-white border box-shadow">
                 <li>
-                    <a class="dropdown-item" href="{{ route('banners.edit', $banner) }}">
+                    <a class="dropdown-item" href="{{ route('banners.edit', $item) }}">
                     <i data-feather="edit-3"></i>
                         Rename
                     </a>
@@ -150,7 +150,7 @@
 
 
                 <li>
-                    <form class="dropdown-item"  action="{{ route('banners.destroy', $banner) }}" method="POST">
+                    <form class="dropdown-item"  action="{{ route('banners.destroy', $item) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <i data-feather="trash-2"></i>

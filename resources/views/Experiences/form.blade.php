@@ -27,7 +27,7 @@
             <div class="form-group">
                 <label for="name_company" class="form-label">Company_Name</label>
                 <input type="text" name="name_company" id="name_company" class="form-control"
-                value="{{ old('name_company', $Experiences->name_company) }}">
+                value="{{ old('name_company', $Experience->name_company) }}">
             </div>
             <br>
 
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label for="subject" class="form-label">Subject</label>
                 <input type="text" name="subject" id="subject" class="form-control"
-                value="{{ old('subject', $Experiences->subject) }}">
+                value="{{ old('subject', $Experience->subject) }}">
             </div>
             <br>
 
@@ -44,7 +44,7 @@
             <div class="form-group">
                 <label for="Start_Date" class="form-label">Start_Date</label>
                 <input type="date" name="Start_Date" id="Start_Date" class="form-control"
-                value="{{ old('Start_Date', $Experiences->Start_Date) }}">
+                value="{{ old('Start_Date', $Experience->Start_Date) }}">
             </div>
             <br><br>
 
@@ -53,14 +53,14 @@
             <div class="form-group">
                 <label for="End_Date" class="form-label">End_Date</label>
                 <input type="date" name="End_Date" id="End_Date" class="form-control"
-                value="{{ old('End_Date', $Experiences->End_Date) }}">
+                value="{{ old('End_Date', $Experience->End_Date) }}">
             </div>
             <br><br>
 
 
             <div class="form-group">
                 <label for="description" class="form-label">Description</label>
-                <textarea name="description" id="description" class="form-control">{{ old('description', $Experiences->description) }}</textarea>
+                <textarea name="description" id="description" class="form-control">{{ old('description', $Experience->description) }}</textarea>
             </div>
             <br><br>
 

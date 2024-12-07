@@ -9,7 +9,8 @@ class ServiceDetail extends Model
 {
     use HasFactory;
 
-    protected $table ='Service_details';
+    // protected $table ='Service_details';
+    protected $table = 'services_details';
 
     protected $fillable = [
         'icon',
@@ -19,7 +20,7 @@ class ServiceDetail extends Model
         'slug',
         'image',
         'longText',
-        'user_id',
+      
     ];
 
     public function user(){

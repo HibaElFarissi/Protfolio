@@ -100,7 +100,7 @@
                 <ul class="dropdown-menu dropdown-menu-end bg-white border box-shadow">
 
                 <li>
-                <a class="dropdown-item" href="{{ route('infos.edit', $info) }}">
+                <a class="dropdown-item" href="{{ route('infos.edit', $item) }}">
                 <i data-feather="edit-3"></i>
                 Rename
                 </a>
@@ -109,7 +109,7 @@
 
 
                 <li>
-                <form class="dropdown-item"  action="{{ route('infos.destroy', $info) }}" method="POST">
+                <form class="dropdown-item"  action="{{ route('infos.destroy', $item) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <i data-feather="trash-2"></i>

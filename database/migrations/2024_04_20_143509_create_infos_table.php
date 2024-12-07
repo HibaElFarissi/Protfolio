@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('job');
             $table->longText('description');
-            $table->string('image1');
-            $table->string('image2');
+            $table->longText('image1')->nullable();
+            $table->longText('image2')->nullable();
             $table->string('facebook');
             $table->string('github');
             $table->string('linkedin');

@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('image');
-            $table->unsignedBigInteger('skills_types');
-            $table->foreign('skills_type_id')->references('id')->on('skills_types');
+            $table->longtext('image');
+            $table->unsignedBigInteger('skillsType_id');
+            $table->foreign('skillsType_id')->references('id')->on('skills_types');
             $table->timestamps();
         });
     }

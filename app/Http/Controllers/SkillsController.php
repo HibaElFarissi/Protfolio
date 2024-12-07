@@ -38,7 +38,7 @@ class SkillsController extends Controller
         $validatedData = $request->validate([
             'name'=> 'required',
             'image'=> 'nullable|image|mimes:png,jpg,svg,jpeg',
-            'skills_type_id'=> 'required',
+            'skillsType_id'=> 'required',
         ]);
 
         if($request->hasFile('image')){
@@ -66,7 +66,7 @@ class SkillsController extends Controller
         //
         $Skills_Types=Skills_type::all();
         $Skill = Skills::findOrFail($id);
-        return view('Skills.form', compact('Skill','Skills_Types'));
+        return view('Skills.edit', compact('Skill','Skills_Types'));
     }
 
     /**
@@ -78,7 +78,7 @@ class SkillsController extends Controller
         $validatedData = $request->validate([
             'name'=> 'required',
             'image'=> 'nullable|image|mimes:png,jpg,svg,jpeg',
-            'skills_type_id'=> 'required',
+            'skillsType_id'=> 'required',
         ]);
 
         if($request->hasFile('image')){

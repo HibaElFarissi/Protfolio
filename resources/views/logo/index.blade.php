@@ -51,7 +51,7 @@
     </tr>
     </thead>
     <tbody>
-        @forelse  ($logo as $item )
+        @forelse  ($logos as $item)
         <tr>
             <td>
                 <div class="form-check p-0 d-flex align-items-center">
@@ -81,7 +81,6 @@
                     @csrf
                     @method('DELETE')
                     <i data-feather="trash-2"></i>
-                    <input type="submit"  value="Delete" />
                     <input type="submit" value="Delete" style="background-color: transparent; border: none; color: inherit; cursor: pointer; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='rgba(0, 0, 0, 0.1)'" onmouseout="this.style.backgroundColor='transparent'" />
                 </form>
                 </li>

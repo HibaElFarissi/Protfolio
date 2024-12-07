@@ -70,8 +70,8 @@
                             <div class="breadcrumb__menu">
                                 <nav>
                                     <ul>
-                                        <li><span><a href="index.html">Home</a></span></li>
-                                        <li><span><a href="services.html">Service</a></span></li>
+                                        <li><span><a href="/">Home</a></span></li>
+                                        <li><span><a href="{{ route('Our-services') }}">Service</a></span></li>
                                         <li><span>Service Details</span></li>
                                     </ul>
                                 </nav>
@@ -233,6 +233,44 @@
                     </div>
                     <div class="col-xl-8 col-lg-7 order-first order-lg-last">
                         <div class="service__details-wrapper">
+                            <h2 class="service__details-title mb-25">{{$service_detail->title}}
+                            </h2>
+                            <p>{{$service_detail->text}}</p>
+                            <div class="service__details-thumb">
+                                <img src="{{ asset('storage/' . $service_detail->image) }}" alt="image not found">
+                            </div>
+                            <div class="service__details-text">
+                                {!! $service_detail->description !!}
+                            </div>
+
+                        </div>
+                        <div class="service__details-sec text-center mt-50">
+                            <h2 class="service__details-title mb-25">Our Featured Service</h2>
+                        </div>
+                        <div class="service__details-item">
+                            @foreach ($Service_details as $item)
+                            <div class="service__wrapper service__item style-seven bg-solid">
+                                <span class="service__icon-wrap">
+                                   {!! $item->icon !!}
+                                </span>
+                                <div class="service__content">
+                                    <h5 class="service__title"><a href="{{ route('Service-details.show', $item) }}">{{$item->title_Global}}</a></h5>
+                                    <p>{{$item->slug}}</p>
+                                    <div class="service__more">
+                                        <a class="bd-text-btn style-two" href="{{ route('Service-details.show', $item) }}">Read More <span
+                                                class="icon__box">
+                                                <i class="fa-regular fa-arrow-right-long icon__first"></i>
+                                                <i class="fa-regular fa-arrow-right-long icon__second"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    {{-- <div class="col-xl-8 col-lg-7 order-first order-lg-last">
+                        <div class="service__details-wrapper">
                             <h2 class="service__details-title mb-25">Best Design Agency <br> The Service We Provide.
                             </h2>
                             <p>We embrace holistic development and support for employees with the aim of being a
@@ -371,7 +409,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>

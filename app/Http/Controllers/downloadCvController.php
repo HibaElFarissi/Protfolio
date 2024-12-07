@@ -8,12 +8,12 @@ class downloadCvController extends Controller
 {
     public function download()
     {
-        $path = public_path('cv/HIBA_EL_FARISSI .pdf');
+        $path = public_path('cv/HIBA_EL_FARISSI.pdf');
         // Change this to the actual path of your CV file
         $headers = [
          'Content-Type' => 'application/pdf',
         ];
-        $fileName = 'My_CV.pdf';
+        $fileName = 'Cv_Hiba.pdf';
         // Change this to the name you want the downloaded file to have
 
         return response()->download($path, $fileName, $headers);

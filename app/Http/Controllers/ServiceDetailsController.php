@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Banner;
-use App\Models\Categorie;
-use App\Models\Feedback;
-use App\Models\info;
-use App\Models\ServiceDetail;
 use App\Models\Tag;
+use App\Models\info;
+use App\Models\Banner;
+use App\Models\Feedback;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
+use App\Models\ServiceDetail;
+use Illuminate\Support\Facades\Auth;
 
 class ServiceDetailsController extends Controller
 {
@@ -19,7 +20,7 @@ class ServiceDetailsController extends Controller
     {
         //
         $Service_details=ServiceDetail::all();
-        return view('service-details.index' , compact('Service_details'));
+        return view('Service-details.index' , compact('Service_details'));
         // return view('pages.Services-details');
     }
 
@@ -29,7 +30,9 @@ class ServiceDetailsController extends Controller
     public function create()
     {
         //
-        return view('service-details.form');
+        $Service_details = new ServiceDetail();
+        $isUpdate = false;
+        return view('Service-details.form', compact('isUpdate', 'Service_details'));
     }
 
     /**
@@ -48,6 +51,7 @@ class ServiceDetailsController extends Controller
             'longText'=> 'required',
 
         ]);
+        $validatedData['user_id'] = Auth::id();
 
         // image upload
        if ($request->hasFile('image')) {
@@ -56,7 +60,7 @@ class ServiceDetailsController extends Controller
        }
 
        ServiceDetail::create($validatedData);
-       return to_route('service-details.index');
+       return to_route('Service-details.index');
     }
 
     /**
@@ -67,12 +71,12 @@ class ServiceDetailsController extends Controller
         //
         $infos=info::all();
         $feedbacks=Feedback::all();
-        $Service_detail = ServiceDetail::findOrFail($id);
+        $service_detail = ServiceDetail::findOrFail($id);
         $Service_details=ServiceDetail::get();
-        $Banners = Banner::get()->paginate(1);
+        $Banners = Banner::get();
         $tags=Tag::all();
         $Categories=Categorie::all();
-        return view('service-details.show', compact('Service_detail','Service_details','feedbacks','Banners',"tags",'Categories','infos'));
+        return view('Service-details.show', compact('service_detail','Service_details','feedbacks','Banners',"tags",'Categories','infos'));
     }
 
     /**
@@ -82,7 +86,8 @@ class ServiceDetailsController extends Controller
     {
         //
         $Service_details= ServiceDetail::findOrFail($id);
-        return view('service-details.form', compact('Service_details'));
+        $isUpdate = true;
+        return view('Service-details.form', compact('Service_details', 'isUpdate'));
     }
 
     /**
@@ -108,9 +113,10 @@ class ServiceDetailsController extends Controller
            $validatedData['image'] = $photoPath;
        }
 
+       $validatedData['user_id'] = Auth::id();
        $ServiceDetail=ServiceDetail::findOrFail($id);
        $ServiceDetail->update($validatedData);
-       return to_route('service-details.index');
+       return to_route('Service-details.index');
     }
 
     /**
@@ -120,6 +126,6 @@ class ServiceDetailsController extends Controller
     {
         //
         ServiceDetail::findOrFail($id)->delete();
-        return to_route('service-details.index');
+        return to_route('Service-details.index');
     }
 }
