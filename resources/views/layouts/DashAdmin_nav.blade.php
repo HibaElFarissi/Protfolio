@@ -143,7 +143,8 @@
                   {{-- Banner --}}
                   <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                    <i data-feather="message-square" class="menu-icon tf-icons"></i>
+                    {{-- <i data-feather="message-square" class="menu-icon tf-icons"></i> --}}
+                    <i data-feather="flag" class="menu-icon tf-icons"></i>
                     <span class="title">Banners</span>
                 </a>
                 <ul class="menu-sub">
@@ -164,10 +165,17 @@
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
 
-                    <i data-feather="align-left" class="menu-icon tf-icons"></i>
+                    {{-- <i data-feather="align-left" class="menu-icon tf-icons"></i> --}}
+                    <i data-feather="book-open" class="menu-icon tf-icons"></i>
                     <span class="title">Blog</span>
                 </a>
                 <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('ArticleCategory.index') }}" class="menu-link">
+                         Article Category
+                        </a>
+                    </li>
+
                     <li class="menu-item">
                         <a href="{{ route('Articles.index') }}" class="menu-link">
                         All Articles
@@ -176,7 +184,7 @@
 
                     <li class="menu-item">
                         <a href="{{ route('Articles.create') }}" class="menu-link">
-                        Create An Article
+                        Create Article
                         </a>
                     </li>
                 </ul>
@@ -198,7 +206,7 @@
 
                     <li class="menu-item">
                         <a href="{{ route('Educations.create') }}" class="menu-link">
-                        Create An Education
+                        Create Education
                         </a>
                     </li>
                 </ul>
@@ -209,7 +217,8 @@
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
 
-                    <i data-feather="award" class="menu-icon tf-icons"></i>
+                    {{-- <i data-feather="award" class="menu-icon tf-icons"></i> --}}
+                    <i data-feather="briefcase" class="menu-icon tf-icons"></i>
                     <span class="title">Experience</span>
                 </a>
                 <ul class="menu-sub">
@@ -252,7 +261,9 @@
                 {{-- Skills --}}
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                    <i data-feather="cpu" class="menu-icon tf-icons"></i>
+                    {{-- <i data-feather="cpu" class="menu-icon tf-icons"></i> --}}
+                    <i data-feather="award" class="menu-icon tf-icons"></i>
+
                     <span class="title">Skills</span>
                 </a>
             <ul class="menu-sub">
@@ -261,39 +272,20 @@
                         All skills
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="{{ route('Skills.create') }}" class="menu-link">
-                    Create
-                    </a>
-                </li>
+
             </ul>
 
                 {{-- Skills-Types--}}
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                    <i data-feather="cpu" class="menu-icon tf-icons"></i>
+                        <i data-feather="code" class="menu-icon tf-icons"></i>
+
                     <span class="title">Skills Type</span>
                 </a>
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="{{ route('Skills-Types.index') }}" class="menu-link">
                         Type Skills
-                    </a>
-                </li>
-            </ul>
-
-
-                {{-- Categories --}}
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle active">
-
-                    <i data-feather="list" class="menu-icon tf-icons"></i>
-                    <span class="title">Categories</span>
-                </a>
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="{{ route('Categories.index') }}" class="menu-link">
-                        All Categories
                     </a>
                 </li>
             </ul>
@@ -350,12 +342,16 @@
                 {{-- Projects --}}
                 <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle active">
-
-                    {{-- <i data-feather="aperture" class="menu-icon tf-icons"></i> --}}
-                    <i data-feather="layers" class="menu-icon tf-icons"></i>
+                    <i data-feather="folder" class="menu-icon tf-icons"></i>
                     <span class="title">Projects</span>
                 </a>
             <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('Categories.index') }}" class="menu-link">
+                        All Categories
+                    </a>
+                </li>
+
                 <li class="menu-item">
                     <a href="{{ route('Protfolios.index') }}" class="menu-link">
                         All Projects
@@ -370,8 +366,9 @@
 
             <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                    <i data-feather="shopping-cart" class="menu-icon tf-icons"></i>
+                    <i data-feather="users" class="menu-icon tf-icons"></i>
                     <span class="title">Members</span>
+
                 </a>
                 <ul class="menu-sub">
 
@@ -386,6 +383,65 @@
                         Create Member
                         </a>
                     </li>
+                </ul>
+            </li>
+
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                    <i data-feather="edit" class="menu-icon tf-icons"></i>
+
+
+                    <span class="title">Designs</span>
+                </a>
+                <ul class="menu-sub">
+
+                    <li class="menu-item">
+                        <a href="{{ route('DesignCategory.index') }}" class="menu-link">
+                            Design Category
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{{ route('Designs.index') }}" class="menu-link">
+                            All Designs
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{{ route('Designs.create') }}" class="menu-link">
+                            Create Design
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                    <i data-feather="video" class="menu-icon tf-icons"></i>
+
+                    <span class="title">Videos</span>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item">
+                        <a href="{{ route('VideoCategory.index') }}" class="menu-link">
+                            Video Category
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{{ route('Videos.index') }}" class="menu-link">
+                            All Videos
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="{{ route('create') }}" class="menu-link">
+                            Create Video
+                        </a>
+                    </li>
+
                 </ul>
             </li>
 
@@ -431,23 +487,26 @@
         <div class="bg-white z-1 admin">
             <div class="d-flex align-items-center admin-info border-top">
                 <div class="flex-shrink-0">
-                    <a href="profile.html" class="d-block">
-                        {{-- <img src="{{ asset('dash/images/admin.jpg') }}" class="rounded-circle wh-54" alt="admin"> --}}
-                        @if(auth()->user()->photo === null)
+                    <a href="{{ route('profile') }}" class="d-block">
+                       @foreach ($infos as $item)
+                            @if ($item->image1 === null)
                             <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt="">
-                        @else
-                            <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin">
-                        @endif
+                            @else
+                                {{-- <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin"> --}}
+                                <img src="{{ asset('storage/' . $item->image1) }}" class="rounded-circle wh-54" alt="admin">
+                            @endif
+
                     </a>
                 </div>
                 <div class="flex-grow-1 ms-3 info">
-                    <a href="#" class="d-block name">{{ auth()->user()->username }}</a>
+                    <a href="#" class="d-block name">{{ $item->name }}</a>
                     <a href=""
                         onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log Out</a>
                     <form action="{{ route('logout') }}" id="logout-form" method="post">
                         @csrf
                     </form>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -501,19 +560,21 @@
                                         <div class="d-xxl-flex align-items-center bg-transparent border-0 text-start p-0 cursor"
                                             data-bs-toggle="dropdown">
                                             <div class="flex-shrink-0">
-                                               {{-- <img class="rounded-circle wh-54" src="{{ asset('dash/images/admin.jpg') }}" alt="admin"> --}}
-                                                 @if(auth()->user()->photo === null)
+                                            @foreach ($infos as $item)
+                                                    @if ($item->image1 === null)
                                                     <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt="">
-                                                @else
-                                                    <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin">
-                                                @endif
+                                                    @else
+                                                        {{-- <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin"> --}}
+                                                        <img src="{{ asset('storage/' . $item->image1) }}" class="rounded-circle wh-54" alt="admin">
+                                                    @endif
+
                                             </div>
                                             <div class="flex-grow-1 ms-3">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <div class="d-none d-xxl-block">
-                                                        <span class="degeneration">{{ auth()->user()->role }}</span>
+                                                        {{-- <span class="degeneration">{{ auth()->user()->role }}</span> --}}
                                                         <div class="d-flex align-content-center">
-                                                            <h3>{{ auth()->user()->name }}</h3>
+                                                            <h3>{{ $item->name }}</h3>
                                                             <div class="down">
                                                                 <i data-feather="chevron-down"></i>
                                                             </div>
@@ -522,17 +583,18 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @endforeach
                                         <ul class="dropdown-menu border-0 bg-white w-100 admin-link">
                                             <li>
                                                 <a class="dropdown-item d-flex align-items-center text-body"
-                                                    href="profile.html">
+                                                    href="{{ route('profile') }}">
                                                     <i data-feather="user"></i>
                                                     <span class="ms-2">Profile</span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item d-flex align-items-center text-body"
-                                                    href="account.html">
+                                                    href="{{ route('profile.edit') }}">
                                                     <i data-feather="settings"></i>
                                                     <span class="ms-2">Setting</span>
                                                 </a>

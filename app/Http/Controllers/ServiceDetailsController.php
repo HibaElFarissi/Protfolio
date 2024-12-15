@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use App\Models\info;
+use App\Models\Logo;
 use App\Models\Banner;
 use App\Models\Feedback;
 use App\Models\Categorie;
@@ -16,11 +17,18 @@ class ServiceDetailsController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin'])->except('show');
+
+    }
     public function index()
     {
         //
+        $infos = info::all();
         $Service_details=ServiceDetail::all();
-        return view('Service-details.index' , compact('Service_details'));
+        return view('Service-details.index' , compact('Service_details','infos'));
         // return view('pages.Services-details');
     }
 
@@ -30,9 +38,10 @@ class ServiceDetailsController extends Controller
     public function create()
     {
         //
+        $infos = info::all();
         $Service_details = new ServiceDetail();
         $isUpdate = false;
-        return view('Service-details.form', compact('isUpdate', 'Service_details'));
+        return view('Service-details.form', compact('isUpdate', 'Service_details','infos'));
     }
 
     /**
@@ -47,7 +56,7 @@ class ServiceDetailsController extends Controller
             'icon'=> 'required',
             'description'=> 'required',
             'slug'=> 'required',
-            'image'=> 'nullable|image|mimes:png,jpg|max:2048',
+            'image'=> 'nullable',
             'longText'=> 'required',
 
         ]);
@@ -70,13 +79,14 @@ class ServiceDetailsController extends Controller
     {
         //
         $infos=info::all();
+        $logo = Logo::all();
         $feedbacks=Feedback::all();
         $service_detail = ServiceDetail::findOrFail($id);
-        $Service_details=ServiceDetail::get();
+        $Service_details = ServiceDetail::where('id', '!=', $id)->latest()->paginate(4);
         $Banners = Banner::get();
         $tags=Tag::all();
         $Categories=Categorie::all();
-        return view('Service-details.show', compact('service_detail','Service_details','feedbacks','Banners',"tags",'Categories','infos'));
+        return view('Service-details.show', compact('service_detail','Service_details','feedbacks','Banners',"tags",'Categories','infos','logo'));
     }
 
     /**
@@ -85,9 +95,10 @@ class ServiceDetailsController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $Service_details= ServiceDetail::findOrFail($id);
         $isUpdate = true;
-        return view('Service-details.form', compact('Service_details', 'isUpdate'));
+        return view('Service-details.form', compact('Service_details', 'isUpdate','infos'));
     }
 
     /**
@@ -102,7 +113,7 @@ class ServiceDetailsController extends Controller
             'icon'=> 'required',
             'description'=> 'required',
             'slug'=> 'required',
-            'image'=> 'nullable|image|mimes:png,jpg|max:2048',
+            'image'=> 'nullable',
             'longText'=> 'required',
 
         ]);

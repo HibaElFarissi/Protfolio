@@ -135,5 +135,5 @@
     </div>
 
     <div class="flex-grow-1"></div>
-    {{$Service_visions->links()}}
+    {{-- {{$Service_visions->links()}} --}}
 @endsection

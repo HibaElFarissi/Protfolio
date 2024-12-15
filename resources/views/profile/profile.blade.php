@@ -1,4 +1,4 @@
-@extends('layouts.DashTry')
+@extends('layouts.Dashadmin_nav')
 @section('content')
 
     <div class="d-sm-flex text-center justify-content-between align-items-center mb-4">
@@ -15,13 +15,14 @@
             </li>
         </ul>
     </div>
+    @foreach ($infos as $item)
     <div class="row justify-content-center">
         <div class="col-xxl-4 col-sm-12">
             <div class="welcome-farol card bg-primary border-0 rounded-0 rounded-top-3 position-relative">
                 <div class="card-body p-4 pb-5 my-2">
                     <div class="mw-350">
                         <h3 class="text-white fw-semibold fs-20 mb-2">Welcome to your profile Here !</h3>
-                        <p class="text-white fs-15">You can manage your account details and feel free to change anything you want. <br>Happy browsing .</p>
+                        <p class="text-white fs-15">{{ $item->description }}</p>
                     </div>
                 </div>
                 <img src="Backend/images/welcome-shape.png" class="position-absolute bottom-0 end-0"
@@ -31,13 +32,14 @@
                 <div class="card-body p-4 pt-0">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="profile-img">
-                            @if(auth()->user()->photo === null)
+                            @if ($item->image1 === null)
                             <img src="{{ asset('BackEnd/images/userAuto.jpeg') }}" class="rounded-circle wh-54" alt="">
                             @else
-                                <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin">
+                                {{-- <img src="{{ asset('storage/profile_pictures/' . auth()->user()->photo) }}" class="rounded-circle wh-54" alt="admin"> --}}
+                                <img src="{{ asset('storage/' . $item->image1) }}" class="rounded-circle wh-54" alt="admin">
                             @endif
-                            <h4 class="fs-16 fw-semibold mb-1">{{ auth()->user()->name }}</h4>
-                            <span class="fs-14">{{ auth()->user()->Experience }}</span>
+                            <h4 class="fs-16 fw-semibold mb-1">{{ $item->name }}</h4>
+                            <span class="fs-14">{{ $item->job }}</span>
                         </div>
                         <div class="text-end">
                             <div id="impression_share"></div>
@@ -58,33 +60,39 @@
                     <ul class="ps-0 mb-0 list-unstyled">
                         <li class="border-bottom border-color-gray mb-3 pb-3">
                             <span class="fw-semibold text-dark w-130 d-inline-block">Full Name :</span>
-                            <span>{{ auth()->user()->name }}</span>
+                            {{-- <span>{{ auth()->user()->name }}</span> --}}
+                            <span>{{ $item->name }}</span>
                         </li>
 
                         <li class="border-bottom border-color-gray mb-3 pb-3">
                             <span class="fw-semibold text-dark w-130 d-inline-block">Email :</span>
 
                             <span class="__cf_email__"
-                                data-cfemail="c4a5aaa0b6a1b3a6b1b6aab784a2a5b6aba8eaa7aba9">{{ auth()->user()->email }}</span>
+                                data-cfemail="c4a5aaa0b6a1b3a6b1b6aab784a2a5b6aba8eaa7aba9">{{ $item->email }}</span>
                         </li>
 
                         <li class="border-bottom border-color-gray mb-3 pb-3">
                             <span class="fw-semibold text-dark w-130 d-inline-block">Facebook :</span>
-                            <span>{{ auth()->user()->Facebook }}</span>
+                            {{-- <span>{{ auth()->user()->Facebook }}</span> --}}
+                            <span>{{ $item->facebook }}</span>
                         </li>
 
                         <li class="border-bottom border-color-gray mb-3 pb-3">
                             <span class="fw-semibold text-dark w-130 d-inline-block">Instagram :</span>
-                            <span>{{ auth()->user()->instagram }}</span>
+                            <span>{{ $item->instagram }}</span>
                         </li>
 
                         <li class="border-bottom border-color-gray mb-3 pb-3">
-                            <span class="fw-semibold text-dark w-130 d-inline-block">Twitter :</span>
-                            <span>{{ auth()->user()->Twitter }}</span>
+                            <span class="fw-semibold text-dark w-130 d-inline-block">Github :</span>
+                            <span>{{ $item->github }}</span>
+                        </li>
+
+                        <li class="border-bottom border-color-gray mb-3 pb-3">
+                            <span class="fw-semibold text-dark w-130 d-inline-block">Linkedin :</span>
+                            <span>{{ $item->linkedin }}</span>
                         </li>
                     </ul>
                 </div>
             </div>
-
-
-        @endsection
+    @endforeach
+            @endsection

@@ -23,18 +23,18 @@
 
 
 
-<h1 style="font-weight: bold"> Create an Article </h1>
+<h1 style="font-weight: bold"> Create Article </h1>
 <br>
 
 <br>
     <form class="row g-3 needs-validation" action="{{ $route }}" method="POST" enctype="multipart/form-data">
         @csrf
-
+        
         @if ($isUpdate)
           @method('PUT')
         @endif
 
-        <div class="col-md-6">
+        <div class="col-md-12">
             <label for="validationCustom10" class="form-label label">Title_Global</label>
             <div class="position-relative">
                 <input type="text" class="form-control h-58 @error('Title_Global') is-invalid @enderror" name="Title_Global"
@@ -46,7 +46,7 @@
             @enderror
         </div>
 
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <label for="validationCustom10" class="form-label label">Slug</label>
             <div class="position-relative">
                 <input type="text" class="form-control h-58 @error('slug') is-invalid @enderror" name="slug"
@@ -56,7 +56,7 @@
             @error('slug')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
-        </div>
+        </div> --}}
 
         {{-- <div id="summernote"></div> --}}
         <div class="col-md-12">
@@ -86,8 +86,7 @@
         </div>
 
 
-        <br><br>
-        <div class="col-md-12">
+        {{-- <div class="col-md-12">
             <label for="validationCustom18" class="form-label label">Quote :</label>
             <div class="position-relative">
                 <textarea cols="30" rows="5" name="quote" class="form-control py-3 @error('quote') is-invalid @enderror"
@@ -97,11 +96,9 @@
             @error('quote')
                 <div class="text-danger">{{ $message }} </div>
             @enderror
-        </div>
+        </div> --}}
 
-
-        <br><br>
-
+{{-- 
         <div class="col-md-12">
             <label for="validationCustom18" class="form-label label">text 3:</label>
             <div class="position-relative">
@@ -112,7 +109,7 @@
             @error('text3')
                 <div class="text-danger">{{ $message }} </div>
             @enderror
-        </div>
+        </div> --}}
 
 
         <br><br>
@@ -181,7 +178,7 @@
             <div class="form-group mb-4">
                 <label class="label">Categories</label>
                 <div class="form-group position-relative">
-                    <select name="Categorie_id" id="Categorie_id" class="form-select form-control h-58" aria-label="Default select example">
+                    <select name="ArticleCategorie_id" id="ArticleCategorie_id" class="form-select form-control h-58" aria-label="Default select example">
                              @foreach ($Categories as $Categorie)
                              <option  value="{{$Categorie->id}}">{{ $Categorie->name}}</option>
                              @endforeach
@@ -203,16 +200,6 @@
           height: 100
         });
         $('#summernote2').summernote({
-          placeholder: 'Enter here You Article',
-          tabsize: 2,
-          height: 100
-        });
-        $('#summernote3').summernote({
-          placeholder: 'Enter here You Article',
-          tabsize: 2,
-          height: 100
-        });
-        $('#summernote4').summernote({
           placeholder: 'Enter here You Article',
           tabsize: 2,
           height: 100

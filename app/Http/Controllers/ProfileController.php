@@ -2,43 +2,54 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Http\RedirectResponse;
+use App\Models\info;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
+use App\Http\Requests\ProfileUpdateRequest;
 
 class ProfileController extends Controller
 {
     /**
      * Display the user's profile form.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
 
      public function index(Request $request): View
     {
-        return view('profile.profile', [
+        $infos = info::all();
+        return view('profile.profile',compact('infos'), [
             'user' => $request->user(),
         ]);
     }
 
     public function update_password(Request $request): View
     {
-        return view('profile.update-password', [
+        $infos = info::all();
+        return view('profile.update-password',compact('infos') ,[
             'user' => $request->user(),
         ]);
     }
 
     public function delete_user(Request $request): View
     {
-        return view('profile.delete-user', [
+        $infos = info::all();
+        return view('profile.delete-user',compact('infos'), [
             'user' => $request->user(),
         ]);
     }
 
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
+        $infos = info::all();
+        return view('profile.edit',compact('infos'), [
             'user' => $request->user(),
         ]);
     }
@@ -48,6 +59,7 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
+        $infos = info::all();
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -69,7 +81,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.edit')->with('status', 'profile-updated',compact('infos'));
     }
 
     /**
@@ -77,7 +89,8 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        $request->validateWithBag('userDeletion', [
+        $infos = info::all();
+        $request->validateWithBag('userDeletion',compact('infos'),[
             'password' => ['required', 'current_password'],
         ]);
 

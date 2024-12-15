@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Logo;
 use App\Models\Article;
-use App\Models\Categorie;
-use App\Models\Tag;
+// use App\Models\Tag;
 use Illuminate\Http\Request;
+use App\Models\ArticleCategory;
+use App\Models\info;
 use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
@@ -13,11 +15,19 @@ class ArticleController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin'])->except('show');
+
+    }
+    
     public function index()
     {
         //
+        $infos = info::all();
         $Articles=Article::all();
-        return view('Articles.index' , compact('Articles'));
+        return view('Articles.index' , compact('Articles','infos'));
     }
 
     /**
@@ -26,10 +36,12 @@ class ArticleController extends Controller
     public function create()
     {
         //
-        $Categories=Categorie::all();
+        $infos = info::all();
+        $Article = new Article();
+        $Categories=ArticleCategory::all();
         // $Tags=Tag::all();
         $isUpdate = false;
-        return view('Articles.form',compact('Categories','isUpdate'));
+        return view('Articles.form',compact('Categories','isUpdate','Article','infos'));
     }
 
     /**
@@ -40,15 +52,12 @@ class ArticleController extends Controller
         //
         $validatedData = $request->validate([
             'Title_Global'=> 'nullable',
-            'slug'=> 'nullable',
             'text1'=> 'nullable',
             'text2'=> 'nullable',
-            'quote' => 'nullable',
-            'text3'=> 'nullable',
             'image1'=> 'nullable',
             'image2'=> 'nullable',
             'image3'=> 'nullable',
-            'Categorie_id'=>'nullable',
+            'ArticleCategorie_id'=>'nullable',
             'user_id' => 'nullable',
         ]);
 
@@ -80,6 +89,16 @@ class ArticleController extends Controller
     public function show(string $id)
     {
         //
+        $infos = info::all();
+        $article = Article::find($id);
+        $logo = Logo::all();
+        $Categories = ArticleCategory::all();
+        // $Post = Article::latest()->where('id','!=', Article::latest()->first()->id) ->paginate(4);
+        $Post = Article::where('id', '!=', $id)->latest()->paginate(4);
+        $articles = Article:: where('id', '!=', $id)->latest()->paginate(2);
+        $Categories = ArticleCategory::withCount('article')->get();
+        return view('Articles.show', compact('article','Categories','articles','Post','logo','infos'));
+
     }
 
     /**
@@ -88,11 +107,12 @@ class ArticleController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $Article = Article::findOrFail($id);
-        $Categories = Categorie::all();
+        $Categories = ArticleCategory::all();
         $isUpdate = true;
         // $Tags = Tag::all();
-        return view('Articles.form', compact('Article','Categories','isUpdate'));
+        return view('Articles.form', compact('Article','Categories','isUpdate','infos'));
     }
 
     /**
@@ -103,15 +123,12 @@ class ArticleController extends Controller
         //
         $validatedData = $request->validate([
             'Title_Global'=> 'nullable',
-            'slug'=> 'nullable',
             'text1'=> 'nullable',
             'text2'=> 'nullable',
-            'quote' => 'nullable',
-            'text3'=> 'nullable',
             'image1'=> 'nullable',
             'image2'=> 'nullable',
             'image3'=> 'nullable',
-            'Categorie_id'=>'nullable',
+            'ArticleCategorie_id'=>'nullable',
         ]);
 
         $validatedData['user_id'] = Auth::id();

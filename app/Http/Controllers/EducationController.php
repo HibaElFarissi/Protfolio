@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\info;
 use App\Models\Education;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,19 @@ class EducationController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
+    
     public function index()
     {
         //
+        $infos = info::all();
         $Educations=Education::paginate(3);
-        return view('Educations.index' , compact('Educations'));
+        return view('Educations.index' , compact('Educations','infos'));
     }
 
     /**
@@ -23,9 +32,10 @@ class EducationController extends Controller
     public function create()
     {
         //
+        $infos = info::all();
         $Education = new Education();
         $isUpdate = false;
-        return view('Educations.form', compact('Education' , 'isUpdate'));
+        return view('Educations.form', compact('Education' , 'isUpdate','infos'));
     }
 
     /**
@@ -61,9 +71,10 @@ class EducationController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $Education = Education::findOrFail($id);
         $isUpdate = true;
-        return view('Educations.form', compact('isUpdate','Education'));
+        return view('Educations.form', compact('isUpdate','Education','infos'));
     }
 
     /**

@@ -63,7 +63,7 @@
 
 
 
-
+{{-- 
             <div class="col-lg-12">
                 <div class="form-group">
                     <label class="label">File Upload</label>
@@ -119,7 +119,7 @@
                             <x-input-error class="mt-2" :messages="$errors->get('instagram')" />
                         </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="col-lg-12">
                 <div class="form-group d-flex gap-3">

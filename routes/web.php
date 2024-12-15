@@ -11,6 +11,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\infosController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SkillsController;
+use App\Http\Controllers\VideosController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BannersController;
 use App\Http\Controllers\ContactController;
@@ -29,7 +30,10 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\SkillsTypeController;
 use App\Http\Controllers\BlogDetailsController;
 use App\Http\Controllers\ServiceVisionController;
+use App\Http\Controllers\VideoCategoryController;
+use App\Http\Controllers\DesignCategoryController;
 use App\Http\Controllers\ServiceDetailsController;
+use App\Http\Controllers\ArticleCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,10 +51,14 @@ Route::get('Our-services', [ServiceController::class,'affichage'])->name('Our-se
 Route::resource('Service-details', ServiceDetailsController::class);
 Route::resource('Service-vision', ServiceVisionController::class);
 Route::get('Blog', [BlogController::class, 'index'])->name('Blog');
-Route::resource('Blog-details', BlogDetailsController::class);
-Route::get('Designs',[DesignsController::class, 'index'])->name('Designs');
+Route::get('Design_all',[DesignsController::class, 'Affichage'])->name('Design_all');
+Route::get('Designs/{id}',[DesignsController::class, 'filter'])->name('filter_Design');
+Route::get('Video_all',[VideosController::class, 'Affichage'])->name('Video_all');
+Route::get('Videos/{id}',[VideosController::class, 'filter'])->name('filter_Video');
 Route::get('Projects', [ProjectController::class , 'index'])->name('Projects');
+Route::get('/Projects/{id}', [ProjectController::class, 'filter'])->name('filter');
 Route::get('/download-cv',[downloadCvController::class,'download'])->name('download.cv');
+Route::get('create', [VideosController::class,'create'])->name('create');
 
 // page de contact:
 Route::get('/inbox',[ContactController::class,'index'])->name('inbox');
@@ -73,12 +81,18 @@ Route::resource('Tags', TagController::class);
 Route::resource('Categories', CategoriesController::class);
 Route::resource('Skills', SkillsController::class);
 Route::resource('Skills-Types', SkillsTypeController::class);
-Route::resource('visions', VisionsController::class);
 Route::resource('Articles', ArticleController::class);
+Route::resource('Protfolios',ProtfolioController::class);
+Route::resource('DesignCategory',DesignCategoryController::class);
+Route::resource('VideoCategory',VideoCategoryController::class);
+Route::resource('ArticleCategory',ArticleCategoryController::class);
 Route::resource('Protfolios',ProtfolioController::class);
 Route::resource('Service', ServiceController::class);
 Route::resource('Newsletters', NewsletterController::class);
 Route::resource('Members', MemberController::class);
+Route::resource('Designs', DesignsController::class);
+Route::resource('Videos', VideosController::class);
+
 
 
 
@@ -90,6 +104,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/visit-chart-data', [AdminController::class, 'getVisitChartData'])->name('visit-chart-data');
     });
 });
+
+
+
 
 
 Route::get('/dashboard', function () {

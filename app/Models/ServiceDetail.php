@@ -20,11 +20,11 @@ class ServiceDetail extends Model
         'slug',
         'image',
         'longText',
-      
+
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
+    // public function user(){
+    //     return $this->belongsTo(User::class);
+    // }
 
 }

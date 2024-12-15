@@ -1,4 +1,4 @@
-@extends('layouts.dashboardnav')
+@extends('layouts.DashAdmin_nav')
 
 @section('content')
     <div class="d-sm-flex text-center justify-content-between align-items-center mb-4">
@@ -20,7 +20,7 @@
             <div class="d-flex justify-content-between align-items-center border-bottom pb-20 mb-20">
                 <h4 class="fw-semibold fs-18 mb-0">All Projects</h4>
                 <div class="d-sm-flex align-items-center">
-                    <a href="{{ route('Protfolio.create') }}">
+                    <a href="{{ route('Protfolios.create') }}">
                         <button class="border-0 btn btn-primary py-2 px-3 px-sm-4 text-white fs-14 fw-semibold rounded-3">
                             <span class="py-sm-1 d-block">
                                 <i class="ri-add-line text-white"></i>
@@ -39,12 +39,12 @@
 
                                 <th scope="col">Categories</th>
                                 <th scope="col">Start_Date</th>
-                                <th scope="col">date_final</th>
+                                <th scope="col">End_Date</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($projects as $item)
+                            @forelse ($Protfolio as $item)
                                 <tr>
                                     <td>
                                         <a href="#" class="d-flex align-items-center mw-380">
@@ -68,7 +68,7 @@
                                         <span class="d-block text-center">{{ $item->Start_Date }}</span>
                                     </td>
                                     <td>
-                                        <span class="d-block text-center">{{ $item->date_final }}</span>
+                                        <span class="d-block text-center">{{ $item->End_Date }}</span>
                                     </td>
                                     <td>
                                         <div class="dropdown action-opt">
@@ -79,7 +79,7 @@
                                             <ul class="dropdown-menu dropdown-menu-end bg-white border box-shadow">
 
                                                 <li>
-                                                    <a class="dropdown-item" href="{{ route('projects.edit', $item->id) }}">
+                                                    <a class="dropdown-item" href="{{ route('Protfolios.edit', $item->id) }}">
                                                         <i data-feather="edit-3"></i>
                                                         Rename
                                                     </a>
@@ -87,7 +87,7 @@
 
                                                 <li>
 
-                                                    <form action="{{ route('projects.destroy', $item) }}" method="POST"
+                                                    <form action="{{ route('Protfolios.destroy', $item) }}" method="POST"
                                                         class="dropdown-item">
                                                         @csrf
                                                         @method('DELETE')

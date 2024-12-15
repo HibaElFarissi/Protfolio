@@ -5,10 +5,10 @@
         <!-- breadcrumb area  start -->
         <section class="breadcrumb__area section-space theme-bg-secondary p-relative">
             <div class="breadcrumb__shape-one">
-                <img src="{{ asset('Frontend/imgs/shape/four-line-shape-1.png') }}" alt="image not found">
+                <img src="{{ asset('assets/imgs/shape/four-line-shape-1.png') }}" alt="image not found">
             </div>
             <div class="breadcrumb__shape-two">
-                <img src="{{ asset('Frontend/imgs/shape/four-line-shape-2.png') }}" alt="image not found">
+                <img src="{{ asset('assets/imgs/shape/four-line-shape-2.png') }}" alt="image not found">
             </div>
             <div class="container">
                 <div class="row justify-content-center">

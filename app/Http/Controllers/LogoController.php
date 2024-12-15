@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\info;
 use App\Models\Logo;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -11,10 +12,18 @@ class LogoController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
+    
     public function index()
     {
+        $infos = info::all();
         $logos = Logo::all();
-        return view('logo.index', compact('logos'));
+        return view('logo.index', compact('logos','infos'));
     }
 
     /**
@@ -23,9 +32,10 @@ class LogoController extends Controller
     public function create()
     {
         //
+        $infos = info::all();
         $logo = new Logo();
         $isUpdate = false;
-        return view('logo.form', compact('logo', 'isUpdate'));
+        return view('logo.form', compact('logo', 'isUpdate','infos'));
     }
 
     /**
@@ -58,9 +68,10 @@ class LogoController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $logo = Logo::findOrFail($id);
         $isUpdate = true;
-        return view('logo.form', compact('logo', 'isUpdate'));
+        return view('logo.form', compact('logo', 'isUpdate','infos'));
     }
 
     /**

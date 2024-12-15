@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categorie;
-use App\Models\Member;
-use App\Models\Protfolio;
 use App\Models\Tag;
+use App\Models\info;
+use App\Models\Logo;
+use App\Models\Banner;
+use App\Models\Member;
+use App\Models\Categorie;
+use App\Models\Protfolio;
 use Illuminate\Http\Request;
 
 class ProtfolioController extends Controller
@@ -13,11 +16,19 @@ class ProtfolioController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin'])->except('show');
+
+    }
     public function index()
     {
         //
+        $infos = info::all();
+        $banners = Banner::get();
         $Protfolio=Protfolio::all();
-        return view('Protfolios.index', compact('Protfolio'));
+        return view('Protfolios.index', compact('Protfolio','banners','infos'));
     }
 
     /**
@@ -26,10 +37,13 @@ class ProtfolioController extends Controller
     public function create()
     {
         //
+        $infos = info::all();
+        $Protfolios = new Protfolio();
+        $isUpdate = false;
         $Categories= Categorie::all();
         $tags= Tag::all();
         $Members= Member::all();
-        return view('Protfolios.form', compact('tags','Categories','Members'));
+        return view('Protfolios.form', compact('tags','Categories','Members','Protfolios','isUpdate','infos'));
     }
 
     /**
@@ -40,16 +54,16 @@ class ProtfolioController extends Controller
         //
         $validatedData = $request->validate([
             'name'=> 'required',
-            'photo'=> 'nullable|image|mimes:png,jpg|max:2048',
+            'photo'=> 'required',
             'description'=> 'required',
             'End_Date'=> 'required',
             'Start_Date'=> 'required',
             'Link_website'=> 'required',
             'Client'=> 'required',
-            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-            'tags.*' => 'nullable|string|max:255',
+            'images.*' => 'required',
+            'tags.*' => 'required|string|max:255',
             'Categorie_id'=>'required',
-            'members.*' => 'nullable|string|max:255',
+            'members.*' => 'required|string|max:255',
         ]);
 
         if ($request->hasFile('images')) {
@@ -82,8 +96,6 @@ class ProtfolioController extends Controller
             $members = $request->input('members');
             $Protfolio->members()->attach($members);
         }
-
-
         return redirect()->route('Protfolios.index');
 
     }
@@ -94,6 +106,14 @@ class ProtfolioController extends Controller
     public function show(string $id)
     {
         //
+        $infos = info::all();
+        $projects=Protfolio::paginate(3);
+        $logo = Logo::all();
+        $banners = Banner::get();
+        $project = Protfolio::findOrFail($id);
+        $project->load('members');
+        $project->load('tags');
+        return view('Protfolios.show', compact('project','projects','logo','banners','infos'));
     }
 
     /**
@@ -102,11 +122,13 @@ class ProtfolioController extends Controller
     public function edit(string $id)
     {
         //
-        $Protfolio = Protfolio::findOrFail($id);
+        $infos = info::all();
+        $isUpdate = true;
+        $Protfolios = Protfolio::findOrFail($id);
         $tags = Tag::all();
         $Categories = Categorie::all();
         $Members = Member::all();
-        return view ('protfolios.form', compact('Protfolio','tags','Categories','Members'));
+        return view ('Protfolios.form', compact('Protfolios','tags','Categories','Members','isUpdate','infos'));
     }
 
     /**
@@ -117,16 +139,16 @@ class ProtfolioController extends Controller
         //
         $validatedData = $request->validate([
             'name'=> 'required',
-            'photo'=> 'nullable|image|mimes:png,jpg|max:2048',
+            'photo'=> 'required',
             'description'=> 'required',
             'End_Date'=> 'required',
             'Start_Date'=> 'required',
             'Link_website'=> 'required',
             'Client'=> 'required',
-            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-            'tags.*' => 'nullable|string|max:255',
+            'images.*' => 'required',
+            'tags.*' => 'required|string|max:255',
             'Categorie_id'=>'required',
-            'members.*' => 'nullable|string|max:255',
+            'members.*' => 'required|string|max:255',
         ]);
 
         if ($request->hasFile('images')) {
@@ -172,6 +194,6 @@ class ProtfolioController extends Controller
     {
         //
         Protfolio::findOrFail($id)->delete();
-        return to_route('protfolios.index');
+        return to_route('Protfolios.index');
     }
 }

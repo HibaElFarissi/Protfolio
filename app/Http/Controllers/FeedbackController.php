@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\info;
 use App\Models\Feedback;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -11,11 +12,19 @@ class FeedbackController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
+    
     public function index()
     {
         //
+        $infos = info::all();
         $feedbacks = Feedback::paginate(3);
-        return view('feedback.index', compact('feedbacks'));
+        return view('feedback.index', compact('feedbacks','infos'));
     }
 
     /**
@@ -24,9 +33,10 @@ class FeedbackController extends Controller
     public function create()
     {
         //
+        $infos = info::all();
         $feedback = new Feedback();
         $isUpdate = false;
-        return view('feedback.form', compact('feedback', 'isUpdate'));
+        return view('feedback.form', compact('feedback', 'isUpdate','infos'));
     }
 
     /**
@@ -68,9 +78,10 @@ class FeedbackController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $feedback=Feedback::findOrFail($id);
         $isUpdate = true;
-        return view('feedback.form', compact('feedback', 'isUpdate'));
+        return view('feedback.form', compact('feedback', 'isUpdate','infos'));
     }
 
     /**

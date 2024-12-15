@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\info;
+use App\Models\Video;
 use App\Models\Visit;
+use App\Models\Design;
+use App\Models\Article;
+use App\Models\Contact;
+use App\Models\Protfolio;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -16,11 +22,15 @@ class AdminController extends Controller
     }
 
     public function AdminDashboard(){
-        $visits = Visit::latest()->paginate(5);
+        $infos = info::all();
+        $visits = Visit::latest()->paginate(15);
         $totalVisits = Visit::count();
-        // $totalProject= project::count();
-        // $totalArticle= Article::count();
-        return view('admin.admin_dashboard',compact('visits','totalVisits'));
+        $totalProject= Protfolio::count();
+        $totalArticle= Article::count();
+        $totalDesigns =Design::count();
+        $totalVideos =Video::count();
+        $totalEmails = Contact::count();
+        return view('admin.admin_dashboard',compact('visits','totalVisits','totalProject','totalArticle','totalDesigns','totalVideos','totalEmails','infos'));
     }
 
     public function getVisitChartData()
@@ -34,7 +44,6 @@ class AdminController extends Controller
         foreach ($visits as $visit) {
             $chartData[$visit->date] = $visit->count;
         }
-
         return response()->json($chartData);
     }
 }

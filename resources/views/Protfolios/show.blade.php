@@ -1,43 +1,43 @@
-@extends('layouts.DashAdmin_nav')
+@extends('layouts.navbarDetail')
 
 @section('content')
 
-    <link href="{{ asset('protfolio/css/themify-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/flaticon.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/magnific-popup.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/owl.carousel.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/owl.theme.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/slick.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/slick-theme.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/swiper.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/nice-select.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/owl.transitions.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/jquery.fancybox.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/css/odometer-theme-default.css') }}" rel="stylesheet">
-    <link href="{{ asset('protfolio/sass/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/owl.theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/slick-theme.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/swiper.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/owl.transitions.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/jquery.fancybox.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/css/odometer-theme-default.css') }}" rel="stylesheet">
+    <link href="{{ asset('FrontEnd/sass/style.css') }}" rel="stylesheet">
     {{--  --}}
     <!-- start wpo-page-title -->
 
-    @foreach ( $Settings as $item )
+    {{-- @foreach ( $Settings as $item ) --}}
     <section class="wpo-page-title">
         <div class="container">
             <div class="row">
                 <div class="col col-xs-12">
                     <div class="wpo-breadcumb-wrap">
-                        <h2>Portfolio Single</h2>
+                        <h2>Project Detail </h2>
                         <ol class="wpo-breadcumb-wrap">
                             <li><a href="/">Home</a></li>
-                            <li>Portfolio</li>
+                            <li>Project</li>
                         </ol>
                     </div>
                 </div>
             </div> <!-- end row -->
         </div> <!-- end container -->
     </section>
-    @endforeach
+    {{-- @endforeach --}}
     <!-- end page-title -->
 
     <!-- wpo-project-single-area start -->
@@ -60,10 +60,10 @@
                                             {{-- <li>Location :<span>7 Lake Street,London</span></li> --}}
                                             <li>Client :<span>{{ $project->Client }}</span></li>
                                             <li>Categorie :<span>{{ $project->Categorie->name }}</span></li>
-                                            <li>View website :<span><a href="{{ $project->View_website }}">Live
+                                            <li>View website :<span><a href="{{ $project->Link_website }}">Live
                                                         Preview</a></span></li>
                                             <li>Start Date :<span>{{ $project->Start_Date }}</span></li>
-                                            <li>Date final :<span>{{ $project->date_final }}</span></li>
+                                            <li>Date final :<span>{{ $project->End_Date }}</span></li>
                                             <li>members :<span>
 
                                                 <div class="col-lg-8">
@@ -85,13 +85,22 @@
                                 </div>
                             </div>
 
-                            <div class="wpo-project-single-main-img owl-carousel mt-2">
+                            {{-- <div class="wpo-project-single-main-img owl-carousel mt-2">
                                 @foreach (json_decode($project->images) as $image)
                                     <img src="{{ asset('images/' . $image) }}" alt="Project Image">
                                 @endforeach
-                                {{-- <img src="{{ asset('assets/images/project-single/4.jpg') }}" alt=""> --}}
-
+                            </div> --}}
+                            <div class="wpo-project-single-main-img owl-carousel mt-2">
+                                @if ($project->images && is_array(json_decode($project->images, true)))
+                                    @foreach (json_decode($project->images, true) as $image)
+                                        <img src="{{ asset('images/' . $image) }}" alt="Project Image">
+                                    @endforeach
+                                @else
+                                    <p>image Not Found</p>
+                                @endif
                             </div>
+
+
                         </div>
                         <div class="wpo-project-single-title">
                             <h3>Tags</h3>
@@ -119,11 +128,10 @@
                                         <div class="col col-lg-4 col-md-6 col-12">
                                             <div class="wpo-project-item">
                                                 <div class="wpo-project-img">
-                                                    <img src="{{ asset('storage/' . $item->photo) }}"
-                                                        alt="">
+                                                    <img src="{{ asset('storage/' . $item->photo) }}"alt="">
                                                 </div>
                                                 <div class="wpo-project-text">
-                                                    <h2><a href="{{ route('projects.show',$item) }}">{{$item->name}} </a></h2>
+                                                    <h2><a href="{{ route('Protfolios.show',$item) }}">{{$item->name}} </a></h2>
                                                     <span>{{$item->Categorie->name }}</span>
                                                 </div>
                                             </div>
@@ -147,12 +155,12 @@
     <!-- wpo-partners-area-start -->
 
     <!-- partners-area-end -->
-    <script src="{{ asset('protfolio/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('protfolio/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('FrontEnd/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('FrontEnd/js/bootstrap.bundle.min.js') }}"></script>
     <!-- Plugins for this template -->
-    <script src="{{ asset('protfolio/js/modernizr.custom.js') }}"></script>
-    <script src="{{ asset('protfolio/js/jquery.dlmenu.js') }}"></script>
-    <script src="{{ asset('protfolio/js/jquery-plugin-collection.js') }}"></script>
+    <script src="{{ asset('FrontEnd/js/modernizr.custom.js') }}"></script>
+    <script src="{{ asset('FrontEnd/js/jquery.dlmenu.js') }}"></script>
+    <script src="{{ asset('FrontEnd/js/jquery-plugin-collection.js') }}"></script>
     <!-- Custom script for this template -->
-    <script src="{{ asset('protfolio/js/script.js') }}"></script>
+    <script src="{{ asset('FrontEnd/js/script.js') }}"></script>
 @endsection

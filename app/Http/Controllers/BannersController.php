@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\info;
+use App\Models\Logo;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -11,11 +13,20 @@ class BannersController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
+    
     public function index()
     {
         //
+        $infos = info::all();
         $banners = Banner::get();
-        return  view('banners.index', compact('banners'));
+        $logo = Logo::all();
+        return  view('banners.index', compact('banners','logo','infos'));
     }
 
     /**
@@ -24,9 +35,10 @@ class BannersController extends Controller
     public function create()
     {
         //
+        $infos = info::all();
         $banner = new Banner();
         $isUpdate = false;
-        return view('banners.form', compact('banner', 'isUpdate'));
+        return view('banners.form', compact('banner', 'isUpdate','infos'));
     }
 
     /**
@@ -120,9 +132,10 @@ class BannersController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $banner = Banner::findOrFail($id);
         $isUpdate = true;
-        return view('banners.form', compact('isUpdate','banner'));
+        return view('banners.form', compact('isUpdate','banner','infos'));
     }
 
     /**

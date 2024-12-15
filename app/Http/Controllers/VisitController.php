@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\info;
 use App\Models\Visit;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,10 @@ class VisitController extends Controller
 
     public function index()
     {
+        $infos = info::all();
         $visits = Visit::latest()->get(); // Get all visits, ordered by the latest
         $totalVisits = Visit::count(); // Get the total number of visits
-        return view('visits.index', compact('visits', 'totalVisits'));
+        return view('visits.index', compact('visits', 'totalVisits','infos'));
     }
 }
 

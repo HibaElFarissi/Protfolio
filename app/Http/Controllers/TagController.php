@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tag;
+use App\Models\info;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -11,11 +12,19 @@ class TagController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
+    
     public function index()
     {
         //
+        $infos = info::all();
         $Tags=Tag::all();
-        return view('Tags.index' , compact('Tags'));
+        return view('Tags.index' , compact('Tags','infos'));
 
     }
     /**
@@ -24,7 +33,8 @@ class TagController extends Controller
     public function create()
     {
         //
-        return view('Tags.index');
+        $infos = info::all();
+        return view('Tags.index','infos');
 
     }
 
@@ -58,8 +68,9 @@ class TagController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $Tag = Tag::findOrFail($id);
-        return view('Tags.form', compact('Tag'));
+        return view('Tags.form', compact('Tag','infos'));
     }
 
     /**

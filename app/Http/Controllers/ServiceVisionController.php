@@ -2,19 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service_vision;
+
+use App\Models\info;
 use Illuminate\Http\Request;
+use App\Models\Service_vision;
 
 class ServiceVisionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
+    
     public function index()
     {
         //
+        $infos = info::all();
         $Service_visions=Service_vision::all();
-        return view('Service-vision.index' , compact('Service_visions'));
+        return view('Service-vision.index' , compact('Service_visions','infos'));
     }
 
     /**
@@ -23,7 +33,8 @@ class ServiceVisionController extends Controller
     public function create()
     {
         //
-        return view('Service-vision.index');
+        $infos = info::all();
+        return view('Service-vision.index',compact('infos'));
     }
 
     /**
@@ -55,8 +66,9 @@ class ServiceVisionController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $Service_vision = Service_vision::findOrFail($id);
-        return view('Service-vision.edit', compact('Service_vision'));
+        return view('Service-vision.edit', compact('Service_vision','infos'));
 
     }
 

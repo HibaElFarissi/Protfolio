@@ -15,6 +15,7 @@ class Categorie extends Model
         'name',
     ];
 
+
     public function Protfolio(){
         return $this->hasMany(Protfolio::class);
     }

@@ -13,15 +13,12 @@ class Article extends Model
 
     protected $fillable = [
         'Title_Global',
-        'slug',
         'text1',
         'text2',
-        'quote',
-        'text3',
         'image1',
         'image2',
         'image3',
-        'Categorie_id',
+        'ArticleCategorie_id',
         'user_id',
     ];
 
@@ -30,6 +27,7 @@ class Article extends Model
     }
 
     public function Categorie(){
-        return $this->belongsTo(Categorie::class, 'Categorie_id');
+        return $this->belongsTo(ArticleCategory::class, 'ArticleCategorie_id');
     }
+
 }

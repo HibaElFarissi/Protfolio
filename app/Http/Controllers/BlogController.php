@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\info;
+use App\Models\Logo;
+use App\Models\Banner;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -12,7 +16,11 @@ class BlogController extends Controller
     public function index()
     {
         //
-        return view('pages.Blog');
+        $infos = info::all();
+        $logo = Logo::all();
+        $banners = Banner::get();
+        $Articles = Article::all();
+        return view('pages.Blog',compact('logo','Articles','banners','infos'));
     }
 
     /**

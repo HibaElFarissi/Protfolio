@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\info;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -11,11 +13,19 @@ class CategoriesController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
+    
     public function index()
     {
         //
+        $infos = info::all();
         $Categories=Categorie::all();
-        return view('Categories.index',compact('Categories'));
+        return view('Categories.index',compact('Categories','infos'));
     }
 
     /**
@@ -24,7 +34,8 @@ class CategoriesController extends Controller
     public function create()
     {
         //
-        return view('Categories.index');
+        $infos = info::all();
+        return view('Categories.index',compact('infos'));
     }
 
     /**
@@ -56,8 +67,9 @@ class CategoriesController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $Categorie = Categorie::findOrFail($id);
-        return view('Categories.form', compact('Categorie'));
+        return view('Categories.form', compact('Categorie','infos'));
     }
 
     /**

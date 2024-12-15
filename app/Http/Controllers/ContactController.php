@@ -2,20 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\info;
+use App\Models\Logo;
 use App\Models\Contact;
-use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        // $this->middleware(['auth', 'role:admin'])->only(['index', 'destroy']);
+        $this->middleware(['auth','role:admin'])->except('create','store');
+    }
+
     public function index()
     {
         //
+        $infos = info::all();
         $contacts = Contact::get();
-        return view('Email.inbox', compact('contacts'));
+        return view('Email.inbox', compact('contacts','infos'));
     }
 
     /**

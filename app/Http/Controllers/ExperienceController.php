@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\info;
 use App\Models\Experience;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,20 @@ class ExperienceController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
+    
     public function index()
     {
         //
+
+        $infos = info::all();
         $Experiences=Experience::paginate(3);
-        return view('Experiences.index' , compact('Experiences'));
+        return view('Experiences.index' , compact('Experiences','infos'));
     }
 
     /**
@@ -23,9 +33,10 @@ class ExperienceController extends Controller
     public function create()
     {
         //
+        $infos = info::all();
         $Experience = new Experience();
         $isUpdate = false;
-        return view('Experiences.form', compact('Experience', 'isUpdate'));
+        return view('Experiences.form', compact('Experience', 'isUpdate','infos'));
     }
 
     /**
@@ -61,9 +72,10 @@ class ExperienceController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $Experience=Experience::findOrFail($id);
         $isUpdate = true;
-        return view('Experiences.form', compact('Experience', 'isUpdate'));
+        return view('Experiences.form', compact('Experience', 'isUpdate','infos'));
     }
 
     /**

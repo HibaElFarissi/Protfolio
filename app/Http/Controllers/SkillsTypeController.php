@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\info;
 use App\Models\Skills;
 use App\Models\Skills_type;
 use Illuminate\Http\Request;
@@ -11,11 +12,19 @@ class SkillsTypeController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
+    
     public function index()
     {
         //
+        $infos = info::all();
         $Skills_Types=Skills_type::all();
-        return view('Skills-Types.index' , compact('Skills_Types'));
+        return view('Skills-Types.index' , compact('Skills_Types','infos'));
 
     }
 
@@ -25,7 +34,8 @@ class SkillsTypeController extends Controller
     public function create()
     {
         //
-        return view('Skills-Types.index');
+        $infos = info::all();
+        return view('Skills-Types.index','infos');
 
     }
 
@@ -58,8 +68,9 @@ class SkillsTypeController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $Skills_Type = Skills_type::findOrFail($id);
-        return view('Skills-Types.edit', compact('Skills_Type'));
+        return view('Skills-Types.edit', compact('Skills_Type','infos'));
 
     }
 

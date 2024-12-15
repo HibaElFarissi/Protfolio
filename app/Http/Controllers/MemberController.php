@@ -2,19 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\info;
+use App\Models\Logo;
 use App\Models\Member;
+use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin'])->except('show');
+
+    }
+
     public function index()
     {
         //
+        $infos = info::all();
         $Members=Member::all();
-        return view('Members.index' , compact('Members'));
+        return view('Members.index' , compact('Members','infos'));
     }
 
     /**
@@ -23,9 +33,10 @@ class MemberController extends Controller
     public function create()
     {
         //
+        $infos = info::all();
         $Member= new Member(); // Arréter 3amaliya old ($member)
         $isUpdate = false;
-        return view('Members.form', compact('isUpdate', 'Member'));
+        return view('Members.form', compact('isUpdate', 'Member','infos'));
     }
 
     /**
@@ -59,8 +70,10 @@ class MemberController extends Controller
     public function show(string $id)
     {
         //
+        $logo = Logo::all();
+        $infos = info::all();
         $Member = Member::findOrFail($id);
-        return view('Members.show', compact('Member'));
+        return view('Members.show', compact('Member','infos','logo'));
     }
 
     /**
@@ -69,9 +82,10 @@ class MemberController extends Controller
     public function edit(string $id)
     {
         //
+        $infos = info::all();
         $Member = Member::findOrFail($id);
         $isUpdate = true;
-        return view('Members.form', compact('Member', 'isUpdate'));
+        return view('Members.form', compact('Member', 'isUpdate','infos'));
     }
 
     /**

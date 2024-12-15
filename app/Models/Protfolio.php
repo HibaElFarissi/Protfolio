@@ -25,13 +25,14 @@ class Protfolio extends Model
         return $this->belongsTo(Categorie::class , 'Categorie_id');
     }
 
-    // public function tags()
-    // {
-    //     return $this->belongsToMany(Tag::class);
-    // }
-    // public function members()
-    // {
-    //     return $this->belongsToMany(Member::class);
-    // }
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+    
+    public function members()
+    {
+        return $this->belongsToMany(Member::class);
+    }
 
 }

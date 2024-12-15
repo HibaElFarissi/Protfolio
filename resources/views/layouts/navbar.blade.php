@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- Place favicon.ico in the root directory -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/icon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/imgs/icon.png') }}">
         <!-- CSS here -->
          <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/vendor/animate.min.css') }}">
@@ -101,17 +101,16 @@
                     {{-- logo --}}
                     <div class="header__main">
                         <div class="header__left">
-                            {{-- @forelse ($logos as $item ) --}}
+                            @forelse ($logo as $item )
                                 <div class="header__logo">
                                     <a href="/">
-                                        <img src="assets/imgs/logoo.png" alt="logo not found">
-                                        {{-- <img src="storage/{{ $item->image }}" alt="Banner-image"> --}}
+                                        {{-- <img src="assets/imgs/logoo.png" alt="logo not found"> --}}
+                                        <img src="{{ asset('storage/' . $item->image) }}"alt="{{ $item->image }}">
                                     </a>
                                 </div>
-                            {{-- @empty
+                            @empty
                                 <p>no logo found !</p>
-                            @endforelse --}}
-
+                            @endforelse
                         </div>
                         <div class="header__middle">
                             <div class="mean__menu-wrapper d-none d-md-block">
@@ -126,11 +125,13 @@
                                             </li>
                                             <li><a href="{{ route('Our-services') }}">Services</a>
                                             </li>
-                                            <li><a href="{{ route('Projects') }}">Protolio</a>
+                                            <li><a href="{{ route('Projects') }}">Projects</a>
                                             </li>
-                                            <li><a href="{{ route('Blog') }}">Blog</a>
+                                            <li><a href="{{ route('Design_all') }}">Designs</a>
                                             </li>
-                                            <li><a href="{{ route('Designs') }}">Designs</a>
+                                            <li><a href="{{ route('Video_all') }}">Videos</a>
+                                            </li>
+                                            <li><a href="{{ route('Blog') }}">Blogs</a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -202,12 +203,13 @@
                         {{-- <img src="assets/imgs/logoo.png" alt="logo not found"> --}}
                     </a>
                 </div>
+                @foreach ($infos as $item)
                 <div class="footer__content">
                     <div class="theme__social">
-                        <a href="https://web.facebook.com/liya.hiba.5/"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/lea_heba/"><i class="icon-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/hiba-el-farissi-8161b5279/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/HibaElFarissi"><i class="fa-brands fa-github"></i></a>
+                        <a href="{{ $item->facebook }}"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="{{ $item->instagram }}"><i class="icon-instagram"></i></a>
+                        <a href="{{ $item->linkedin }}"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="{{ $item->github }}"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -221,12 +223,7 @@
                         <h5>About Me</h5>
                     </div>
                     <div class="footer__widget-content">
-                        <p class="mb-30">
-                            Meet Hiba, a dynamic full-stack developer known for her passion for crafting exceptional digital experiences.
-                             With expertise in both frontend and backend development, she brings a unique blend of creativity to every project she undertakes.
-                             When not coding,
-                             Hiba enjoys exploring new technologies.
-                        </p>
+                        <p class="mb-30">{{ $item->description }}</p>
                     </div>
                 </div>
 
@@ -247,7 +244,7 @@
                                         </div>
                                         <div class="contact__info-content">
                                             <p>Phone</p>
-                                            <h6><a href="tel:+212615256198">+212615256198</a></h6>
+                                            <h6><a href="tel:+{{ $item->phoneNumber }}">+{{ $item->phoneNumber }}</a></h6>
                                         </div>
                                     </div>
                                 </li>
@@ -260,7 +257,7 @@
                                         </div>
                                         <div class="contact__info-content">
                                             <p>Email</p>
-                                            <h6><a href="mailto:elfarissihiba780@gmail.com">elfarissihiba780@gmail.com</a></h6>
+                                            <h6><a href="mailto:{{ $item->email }}">{{ $item->email }}</a></h6>
                                         </div>
                                     </div>
                                 </li>
@@ -268,6 +265,7 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
 
                 <div class="footer__widget">
                     <div class="footer__widget-title">
@@ -309,9 +307,11 @@
         </div>
         <div class="footer__copyright style-two">
             <div class="container">
+                @foreach ($infos as $item)
                 <div class="footer__copyright">
-                    <p>Copyright @  2024 <a href="/">Hiba EL Farissi.</a> All Right Reserved</p>
+                    <p>Copyright @ 2024 <a href="/">{{ $item->name }}.</a> All Right Reserved</p>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>

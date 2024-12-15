@@ -1,5 +1,5 @@
-@extends('layouts.DashTry')
-{{-- @extends('layouts.DashAdmin_nav') --}}
+{{-- @extends('layouts.DashTry') --}}
+@extends('layouts.DashAdmin_nav')
 @section('content')
 
 

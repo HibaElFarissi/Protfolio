@@ -62,7 +62,7 @@
 
 
                                 <div class="login__register-now">
-                                    <p>Don’t have an account? <a href="{{ route('register') }}">Register Now</a></p>
+                                    <p>Don’t have an account? HAHAHA I don't Care it's my Protfolio</p>
                                 </div>
                             </div>
                         </div>

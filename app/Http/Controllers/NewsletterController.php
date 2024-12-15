@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\info;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -11,11 +12,19 @@ class NewsletterController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin'])->except('show');
+
+    }
+
     public function index()
     {
         //
+        $infos = info::all();
         $Newsletters = Newsletter::get();
-        return view('Newsletters.index', compact('Newsletters'));
+        return view('Newsletters.index', compact('Newsletters','infos'));
     }
 
     /**

@@ -17,7 +17,7 @@
                 @method('PUT')
         @endif
 
-        <div class="col-md-6">
+        <div class="col-md-12">
             <label for="validationCustom10" class="form-label label">Title</label>
             <div class="position-relative">
                 <input type="text" class="form-control h-58 @error('title') is-invalid @enderror" name="title"
@@ -29,17 +29,20 @@
             @enderror
         </div>
 
-        <div class="col-md-6">
-            <label for="validationCustom11" class="form-label label">text</label>
+
+        <div class="col-md-12">
+            <label for="validationCustom18" class="form-label label"> LongText :</label>
             <div class="position-relative">
-                <input type="text" name="text" class="form-control h-58 @error('text') is-invalid @enderror"
-                    id="validationCustom11" value="{{ old('text', $Service_details->text) }}" required>
+                <textarea cols="30" rows="5" name="longText" class="form-control py-3 @error('longText') is-invalid @enderror"
+                    id="longText" placeholder="Notes" required>{{ old('longText', $Service_details->longText) }}</textarea>
 
             </div>
-            @error('text')
-                <div class="text-danger">{{ $message }}</div>
+            @error('longText')
+                <div class="text-danger">{{ $message }} </div>
             @enderror
         </div>
+
+
 
         <div class="col-md-12">
             <label for="validationCustom18" class="form-label label"> Description :</label>
@@ -53,17 +56,7 @@
             @enderror
         </div>
 
-        <div class="col-md-12">
-            <label for="validationCustom18" class="form-label label"> LongText :</label>
-            <div class="position-relative">
-                <textarea cols="30" rows="5" name="longText" class="form-control py-3 @error('longText') is-invalid @enderror"
-                    id="longText" placeholder="Notes" required>{{ old('longText', $Service_details->longText) }}</textarea>
 
-            </div>
-            @error('longText')
-                <div class="text-danger">{{ $message }} </div>
-            @enderror
-        </div>
 
 
 

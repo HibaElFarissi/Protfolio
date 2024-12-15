@@ -11,6 +11,13 @@ class infosController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+
+        $this->middleware(['auth','role:admin']);
+
+    }
+    
     public function index()
     {
         //
@@ -26,10 +33,10 @@ class infosController extends Controller
     public function create()
     {
         //
-
+        $infos = info::all();
         $info = new info();
         $isUpdate = false;
-        return view('infos.form', compact('info', 'isUpdate'));
+        return view('infos.form', compact('info', 'isUpdate','infos'));
     }
 
     /**
@@ -84,9 +91,10 @@ class infosController extends Controller
     public function edit(string $id)
     {
         // rj3 données 9dim & afficher fwahed page
+        $infos = info::all();
         $info = info::findOrFail($id);
         $isUpdate = true;
-        return view('infos.form', compact('isUpdate','info'));
+        return view('infos.form', compact('isUpdate','info','infos'));
     }
 
     /**
